@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/11/19/ChapterGrabberForChapterTitlesInMKV.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-11-19T07:28:29.4591068Z</atom:published>
+  <atom:title>Chapter Grabber for Chapter Titles in MKV</atom:title>
+  <atom:content type="html">&lt;p&gt;I recently updated an old program I wrote back in the .NET 1.0 days. Seeing some of my old code was very interesting as suddenly I became very aware of how much I’ve learned since then. &lt;/p&gt;  &lt;p&gt;The updates I made are mainly to take advantage of &lt;a href="http://tagchimp.com"&gt;tagChimp&lt;/a&gt; which is an online database of media metadata. They have an &lt;a href="http://dev.tagchimp.com"&gt;XML API&lt;/a&gt; where you can get chapter titles for movies and TV shows.&lt;/p&gt;  &lt;p&gt;I’ve been making some backups of my movies into my favorite container format &lt;a href="http://www.matroska.org/"&gt;Matroska&lt;/a&gt; or MKV. I like to be able to skip to my favorite part of the movie using chapters aka “Scene Selection” as commonly seen on DVD and Bluray discs.&amp;#160; My favorite media player, &lt;a href="http://mpc-hc.sourceforge.net/"&gt;Media Player Classic Home Cinema&lt;/a&gt; edition has support for these chapters built in. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://jvance.com/media/2008/11/19/Chapters9.media"&gt;&lt;img title="Chapters" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="377" alt="Chapters" src="http://jvance.com/media/2008/11/19/Chapters_thumb5.media" width="704" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;ChapterGrabber allows me to open the chapter times extracted from either my DVD IFO file or an existing chapter file. I can then search for the chapter names and apply them to the chapter times.&amp;#160; The result is scene titles for your backup as seen above.&lt;/p&gt;  &lt;p&gt;There are more details on the &lt;a href="/pages/ChapterGrabber.xhtml"&gt;ChapterGrabber&lt;/a&gt; page.&lt;/p&gt;  </atom:content>
+  <atom:category term="HTPC" />
+  <atom:updated>2008-12-08T06:53:51.0950474Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-11-19:blog,ChapterGrabberForChapterTitlesInMKV</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>2</svc:ratingSum>
+  <app:edited>2009-04-10T04:57:38.5492189Z</app:edited>
+  <svc:raters>91.147.217.167</svc:raters>
+</atom:entry>

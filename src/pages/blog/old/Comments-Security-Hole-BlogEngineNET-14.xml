@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:app="http://www.w3.org/2007/app">
+  <atom:title>Comments Security Hole in BlogEngine.NET 1.4</atom:title>
+  <atom:content type="html">&lt;p&gt;I found a hole in BlogEngine.NET that allows anyone to delete and approve comments. &lt;/p&gt; &lt;strong&gt;UPDATE 7/11: Fixed in 1.4.0.12&lt;/strong&gt;  &lt;h2&gt;Verify the Hole&lt;/h2&gt;  &lt;ul&gt;   &lt;li&gt;Add a test comment to your blog &lt;/li&gt; &lt;/ul&gt; &lt;a href="/media/CommentHole.png"&gt;&lt;img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="219" alt="image" src="/media/CommentHole_thumb.png" width="644" border="0" /&gt;&lt;/a&gt;   &lt;ul&gt;   &lt;li&gt;Refresh the blog posting to retrieve latest source &lt;/li&gt;    &lt;li&gt;View source of blog posting &lt;/li&gt;    &lt;li&gt;Find guid of comment to delete (see line 103 below) &lt;/li&gt; &lt;/ul&gt;  &lt;pre class="xml:nocontrols:firstline[103]" name="code"&gt;&amp;lt;div id=&amp;quot;id_9c2b8578-1dde-421e-94ff-5ea7e0d82012&amp;quot; class=&amp;quot;comment&amp;quot;&amp;gt;
+  &amp;lt;p class=&amp;quot;date&amp;quot;&amp;gt;7/10/2008 4:13:35 PM&amp;lt;/p&amp;gt;
+  &amp;lt;p class=&amp;quot;gravatar&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;http://www.gravatar.com/avatar/b642b4217b34b1e8d3bd915fc65c4452.jpg?s=80&amp;amp;amp;d=...&amp;quot; alt=&amp;quot;Test3&amp;quot; /&amp;gt;&amp;lt;/p&amp;gt;
+  &amp;lt;p class=&amp;quot;content&amp;quot;&amp;gt;asfasdfafdasd sa afsdfdsaas &amp;lt;/p&amp;gt;
+  &amp;lt;p class=&amp;quot;author&amp;quot;&amp;gt;
+    Test3
+    &amp;lt;img src=&amp;quot;/blogengine/pics/flags/us.png&amp;quot; class=&amp;quot;flag&amp;quot; alt=&amp;quot;us&amp;quot; /&amp;gt;
+  &amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Request a POST to BlogPostUrl.aspx?deletecomment=&lt;strong&gt;guid&lt;/strong&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;a href="/media/CommentHolePost.png"&gt;&lt;img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="134" alt="image" src="/media/CommentHolePost_thumb.png" width="644" border="0" /&gt;&lt;/a&gt; 
+
+&lt;ul&gt;
+  &lt;li&gt;Refresh the page and notice comment is deleted &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Patch the Hole&lt;/h2&gt;
+
+&lt;p&gt;You can patch the hole by updating the Page_Load event in the CommentView.ascx.cs file by checking for an authenticated user (lines 117,118, &amp;amp; 127)&lt;/p&gt;
+
+&lt;pre class="c#:nocontrols:firstline[110]" name="code"&gt;protected void Page_Load(object sender, EventArgs e)
+{
+  if (Post == null)
+    Response.Redirect(Utils.RelativeWebRoot);
+  
+  if (!Page.IsPostBack &amp;amp;&amp;amp; !Page.IsCallback)
+  {
+    if (Page.User.Identity.IsAuthenticated)
+    {
+      if (Request.QueryString[&amp;quot;deletecomment&amp;quot;] != null)
+        DeleteComment();
+      
+      if (!string.IsNullOrEmpty(Request.QueryString[&amp;quot;approvecomment&amp;quot;]))
+        ApproveComment();
+
+      if (!string.IsNullOrEmpty(Request.QueryString[&amp;quot;approveallcomments&amp;quot;]))
+        ApproveAllComments();
+    }
+
+  string path = Utils.RelativeWebRoot + &amp;quot;themes/&amp;quot; + BlogSettings.Instance.Theme + &amp;quot;/CommentView.ascx&amp;quot;;&lt;/pre&gt;
+
+&lt;p&gt;Repeat the steps given above to verify that the hole has been patched.&lt;/p&gt;
+
+&lt;p&gt;In the process of adding &lt;a href="http://openid.net"&gt;OpenID&lt;/a&gt; support to the comment system in &lt;a href="http://dotnetblogengine.net"&gt;BlogEngine.NET&lt;/a&gt; I found myself deep in a rabbit hole of refactoring. This comment security issue is just one of the things I've found during my journey. I've &lt;a href="http://www.codeplex.com/blogengine/WorkItem/View.aspx?WorkItemId=6856"&gt;reported the issue&lt;/a&gt; on the BlogEngine.NET Issue Tracker.&amp;#160; I think it is important to point out that the patch above is just a quick fix.&amp;#160; The proper solution is to put authorization checks in the business layer (the BlogEngine.Core.Post business object in this case).&lt;/p&gt;</atom:content>
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="BlogEngineNET" label="BlogEngine.NET" />
+  <atom:category term="CSharp" label="C#" />
+  <atom:published>2008-07-10T17:06:00-05:00</atom:published>
+  <app:control>
+    <app:draft>no</app:draft>
+  </app:control>
+  <atom:summary>Jarrett describes the steps to reproduce a security hole in BlogEngine.NET for deleting and approving comments.</atom:summary>
+  <atom:updated>2008-09-11T20:25:59.06-05:00</atom:updated>
+  <atom:id>tag:jvance.com,2008-07-10:blog,Comments-Security-Hole-BlogEngineNET-14</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.854Z</app:edited>
+</atom:entry>

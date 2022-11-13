@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/12/24/NewBlogSvcReleaseAndOxite.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-12-24T16:20:27.0457124Z</atom:published>
+  <atom:title>New BlogSvc Release and Oxite</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <img style="border-width:0;float:right;height:111;width:199;border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; margin-left: 0px; margin-right: 0px; border-right-width: 0px" title="oxciteblogsvc" alt="oxciteblogsvc" src="http://jvance.com/media/2008/12/24/Oxciteblogsvc13.media" />
+      <p>Wow, I believe I'm <a href="http://codebetter.com/blogs/karlseguin/">all</a><a href="http://www.hanselman.com/blog/ASPNETMVCSamplesOxiteAndCommunity.aspx">
+caught</a><a href="http://devlicio.us/blogs/casey/archive/2008/12/19/oxite-an-example-of-how-not-to-write-mvc-applications.aspx">
+up</a><a href="http://blog.wekeroad.com/blog">on</a><a href="http://blog.wekeroad.com/blog/some-thoughts-on-oxite/">the</a><a href="http://www.lazycoder.com/weblog">recent</a><a href="http://www.lazycoder.com/weblog/2008/12/15/new-aspnet-mvc-sample-oxite-needs-some-tlc/">
+hype</a><a href="http://blog.lozanotek.com/archive/2008/12/15/Oxite.aspx">around</a><a href="http://www.codeplex.com/oxite">Oxite</a>. Although I can't
+help but feel a bit left out in the cold.  I mean <a title="Blog Service Homepage" href="http://blogsvc.net">BlogSvc</a>
+has been on <a href="http://codeplex.com/blogsvc">codeplex</a> much
+longer than oxite and it never received this much attention.  It is
+a shame because I believe the newest release, <a href="http://blogsvc.net/blog/2008/12/24/Release08.xhtml">BlogSvc
+0.8 Wizard Release</a> is solid example of how to build a content
+management solution using MVC.</p>
+      <p>I know BlogSvc doesn't yet have all the fancy administration
+pages or widgets/plugins yet, but we have a solid foundation to get
+there.  I wish we could bring all the developers together on one
+solution so we build the next WordPress on ASP.NET MVC. Perhaps
+combine the best of <a title="Blog Service Homepage" href="http://codeplex.com/blogsvc">BlogSvc</a>, <a href="http://www.dotnetblogengine.net/post/BlogEngineNET-demoed-at-PDC.aspx">
+BlogEngine.net</a>, <a href="http://www.hanselman.com/blog/DasBlog19Released.aspx">dasBlog</a>,
+<a href="http://haacked.com/archive/2008/11/27/subtext-2.1-security-update.aspx">
+SubText</a> all into one super solution and call it
+SuperPress<small><sup>TM</sup></small>.</p>
+      <p>&lt;/rant&gt;</p>
+    </div>
+  </atom:content>
+  <atom:category term="BlogSvc" />
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="MVC" label="MVC" />
+  <atom:updated>2009-01-12T16:09:14.5970745Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-12-24:blog,NewBlogSvcReleaseAndOxite</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.388Z</app:edited>
+</atom:entry>

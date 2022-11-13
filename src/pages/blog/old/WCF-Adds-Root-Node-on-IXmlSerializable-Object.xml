@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:app="http://www.w3.org/2007/app">
+  <atom:title>WCF Adds Root Node on IXmlSerializable Object</atom:title>
+  <atom:content type="html">&lt;p&gt;Has anybody else had trouble with WCF adding a root node on their objects that implement IXmlSerializable? &lt;/p&gt; &lt;p&gt;Here is the setup:&lt;/p&gt; &lt;ul&gt;&lt;li&gt;Create a class that implements IXmlSerializable&lt;/li&gt;&lt;/ul&gt; &lt;pre class="c#" name="code"&gt;public class Entry : IXmlSerializable
+{
+  public XElement Xml { get; set; }
+  public void ReadXml(XmlReader reader)
+  {
+    Xml = XElement.Load(reader, LoadOptions.SetBaseUri);
+  }
+  public void WriteXml(XmlWriter writer)
+  {
+    Xml.WriteTo(writer);
+  }
+}&lt;/pre&gt;
+&lt;ul&gt;&lt;li&gt;Create a WCF service that returns the object.&lt;/li&gt;&lt;/ul&gt;
+&lt;pre class="c#" name="code"&gt;[ServiceContract]
+[XmlSerializerFormat]
+public interface IService
+{
+  [OperationContract]
+  [WebGet(BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "{a}/{b}/{c}")]
+  Entry RetrieveEntry(string a, string b, string c);
+}
+
+public class Service: IService
+{
+  public Entry RetrieveEntry(string a, string b, string c)
+  {
+    return new Entry
+    {
+      Xml = new XElement("test", a + "/" + b + "/" + c);
+    }
+  }
+}&lt;/pre&gt;
+When hitting the service located at &lt;em&gt;http://localhost/EntryService.svc/one/two/three&lt;/em&gt;, I expect to get the following xml:&lt;pre name="code" class="xml"&gt;&amp;lt;test&amp;gt;one/two/three&amp;lt;/test&amp;gt;&lt;/pre&gt;Instead, I always get the above xml wrapped in a root node as shown below:&lt;pre name="code" class="xml"&gt;&amp;lt;Entry xmlns=&amp;quot;http://schemas.datacontract.org/2004/07/EntryTest&amp;quot;&amp;gt;
+  &amp;lt;test&amp;gt;one/two/three&amp;lt;/test&amp;gt;
+&amp;lt;/Entry&amp;gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;I've set the BodyStyle to Bare&lt;/li&gt;
+&lt;li&gt;I've set the [XmlSerializerFormat] attribute&lt;/li&gt;
+&lt;li&gt;I've tried putting [XmlRoot(null)] on the Entry class&lt;/li&gt;
+&lt;/ol&gt;
+The only thing that seems to work is changing the return type to XElement.  This is really odd behavior of WCF.  I can't find anything in the documentation as to why it is doing this.
+&lt;p&gt;&lt;strong&gt;Update (7/27):&lt;/strong&gt; It appears you must use the XmlRootAttribute to accomplish this.  Your &lt;em&gt;WriteXml(XmlWriter writer)&lt;/em&gt; method can check to see if the root node was already added by the serializer, and if not add it:&lt;/p&gt;&lt;pre name="code" class="c#"&gt;public void WriteXml(XmlWriter writer)
+{
+
+    //only start document if needed
+    bool start = false;
+    if (writer.WriteState == WriteState.Start)
+    {
+        start = true;
+        writer.WriteStartDocument();
+        writer.WriteStartElement(&amp;quot;root&amp;quot;, &amp;quot;http://example.com&amp;quot;);
+    }
+    //TODO: custom serialization here
+
+    if (start)
+    {
+        writer.WriteEndElement();
+        writer.WriteEndDocument(); 
+    }
+}&lt;/pre&gt;This allows the WriteXml to be usable even when the object isn't being serialized by the WCF serializer.</atom:content>
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="CSharp" label="C#" />
+  <atom:category term="WCF" />
+  <atom:published>2008-07-26T22:27:45-05:00</atom:published>
+  <app:control>
+    <app:draft>no</app:draft>
+  </app:control>
+  <atom:updated>2008-09-11T20:25:59.029-05:00</atom:updated>
+  <atom:id>tag:jvance.com,2008-07-27:blog,WCF-Adds-Root-Node-on-IXmlSerializable-Object</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.836Z</app:edited>
+</atom:entry>

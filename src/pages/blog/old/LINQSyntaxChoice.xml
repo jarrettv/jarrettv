@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/10/18/LINQSyntaxChoice.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-10-18T03:32:07.8801626Z</atom:published>
+  <atom:title>LINQ Syntax Choice</atom:title>
+  <atom:content type="html">&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/214500/which-linq-syntax-do-you-prefer-fluent-or-query-expression"&gt;Which LINQ syntax do you prefer?&lt;/a&gt;&amp;#160; The fluent style or the query style?&lt;/p&gt;  &lt;img title="LinqSyntax" alt="Fluent and Query LINQ Syntax" src="http://jvance.com/media/2008/10/18/LinqSyntax16.media" width="504" height="193" /&gt;  &lt;p&gt;I personally prefer the Fluent style as it appears to come natural to me.&amp;#160; However, I have yet to deal with some of the more complicated joins that may work better with the query style syntax.&lt;/p&gt;  </atom:content>
+  <atom:category term="CSharp" label="C#" />
+  <atom:updated>2008-11-07T16:28:00.0500207Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-10-18:blog,LINQSyntaxChoice</atom:id>
+  <svc:ratingCount>2</svc:ratingCount>
+  <svc:ratingSum>10</svc:ratingSum>
+  <svc:raters>212.238.206.174;80.96.67.68</svc:raters>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.526Z</app:edited>
+</atom:entry>

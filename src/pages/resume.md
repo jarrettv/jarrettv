@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/BlogPost.astro"
-title: "About Me"
+title: "Jarrett Vance Resume"
 description: "Jarrett Vance Senior Software Architect"
 updatedDate: "November 12 2022"
 heroImage: "/placeholder-about.jpg"

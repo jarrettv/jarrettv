@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/12/08/DoNotInstallWindowsLiveFamilySafety.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-12-08T06:50:44.1869868Z</atom:published>
+  <atom:title>Windows Live Family Safety Breaks Internet</atom:title>
+  <atom:category term="Computers" />
+  <atom:updated>2008-12-13T07:15:05.9690712Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-12-08:blog,DoNotInstallWindowsLiveFamilySafety</atom:id>
+  <atom:content type="html">&lt;p&gt;&lt;a href="http://jvance.com/media/2008/12/08/FamilySafety41.media"&gt;&lt;img title="FamilySafety" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; margin-left: 0px; margin-right: 0px; border-right-width: 0px" height="239" alt="FamilySafety" src="http://jvance.com/media/2008/12/08/FamilySafety_thumb21.media" width="224" align="right" border="0" /&gt;&lt;/a&gt; The current version of &lt;a href="http://www.windowslive.com/Explore/FamilySafety"&gt;Windows Live Family Safety&lt;/a&gt; may hose up your Vista machine. I recently installed this on a brand new Vista machine as I was installing Live Photo Gallery and it broke internet access and video streaming to the Xbox (via the Vista Media Center Extender)&lt;/p&gt;  &lt;p&gt;If you try to uninstall Windows Live Family Safety, it will not fix anything. At one point, I saw the following error:&lt;/p&gt;  &lt;blockquote&gt;the Family Safety service has been disabled. Please ask the administrator for this computer to enable it. Until that's done, you will not be able to browse the Internet&lt;/blockquote&gt;  &lt;p&gt;I was logged in as an admin and I tried to disable the service, but since I uninstalled it, there was nothing to disable.&amp;#160; Something was left behind by this program that was blocking port 80.&amp;#160; I disabled the firewall and it still wouldn’t work.&lt;/p&gt;  &lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Please note that I never signed the program into Live or enabled it before I uninstalled it. I don't know why it would start blocking the internet without asking me. My advice: &lt;strong&gt;Avoid installing Windows Live Family Safety&lt;/strong&gt;&lt;/p&gt;  &lt;p&gt;The only way I could fix this was re-installing Vista. I'm posting this in hope's that others will avoid this program.&lt;/p&gt; Other links on the subject:   &lt;ul&gt;   &lt;li&gt;&lt;a href="http://www.pcadvisor.co.uk/forums/index.cfm?action=showthread&amp;amp;threadid=337550&amp;amp;forumid=18"&gt;Windows Live Family Safety Stops Internet Access&lt;/a&gt; &lt;/li&gt;    &lt;li&gt;&lt;a href="http://www.atribune.org/forums/index.php?showtopic=4744"&gt;IE7 &amp;amp; WIndows Live Family Safety Stuffing Up, GRRR....&lt;/a&gt;       &lt;p&gt;&lt;/p&gt;   &lt;/li&gt; &lt;/ul&gt;  </atom:content>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>5</svc:ratingSum>
+  <svc:raters>72.66.29.249</svc:raters>
+  <atom:author>
+    <atom:name>Jarrett</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.471Z</app:edited>
+</atom:entry>

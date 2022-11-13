@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/10/16/DeployMVCApp.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-10-16T00:17:59.9163836Z</atom:published>
+  <atom:title>Deploy MVC Application</atom:title>
+  <atom:content type="html">&lt;p&gt;I previously thought Visual Studio.NET only supported automatically deploying “Web Site” projects but it also works with “Web Application” and “MVC” projects. Right-click on your project and choose publish.&lt;/p&gt;  &lt;p&gt;&amp;#160;&lt;img title="PublishWeb" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="415" alt="PublishWeb" src="http://jvance.com/media/2008/10/16/PublishWeb4.media" width="563" border="0" /&gt; &lt;/p&gt;  &lt;p&gt;After choosing publish it will upload all the files based on your “Copy” choice.&amp;#160; You can watch the output window to track the progress:&lt;/p&gt; &lt;code&gt;------ Publish started: Project: WebMvc, Configuration: Debug Any CPU ------    &lt;br /&gt;Connecting to &lt;a href="ftp://ftp.atomserver.net/wwwroot/.."&gt;ftp://ftp.atomserver.net/wwwroot/..&lt;/a&gt;.     &lt;br /&gt;Deleting existing files...     &lt;br /&gt;Publishing folder /...     &lt;br /&gt;Publishing folder App_Data...     &lt;br /&gt;Publishing folder App_Data/www...     &lt;br /&gt;Publishing folder App_Data/www/blog...     &lt;br /&gt;Publishing folder App_Data/www/blog/WelcomeToBlogService06...     &lt;br /&gt;Publishing folder App_Data/www/media...     &lt;br /&gt;Publishing folder App_Data/www/pages...     &lt;br /&gt;Publishing folder js...     &lt;br /&gt;Publishing folder themes...     &lt;br /&gt;Publishing folder themes/default...     &lt;br /&gt;Publishing folder themes/default/images...     &lt;br /&gt;Publishing folder bin...     &lt;br /&gt;========== Build: 5 succeeded or up-to-date, 0 failed, 0 skipped ==========     &lt;br /&gt;========== Publish: 1 succeeded, 0 failed, 0 skipped ==========&lt;/code&gt;  </atom:content>
+  <atom:category term="MVC" label="MVC" />
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:updated>2008-10-16T00:18:47.1907374Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-10-16:blog,DeployMVCApp</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.555Z</app:edited>
+</atom:entry>

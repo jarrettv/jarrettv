@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:app="http://www.w3.org/2007/app">
+  <atom:title>Add OpenID to BlogEngine.NET 1.4 Part 1</atom:title>
+  <atom:content type="html">&lt;p&gt;Here is a guide on how to add &lt;a href="http://openid.net"&gt;OpenID&lt;/a&gt; support to &lt;a href="http://dotnetblogengine.net"&gt;BlogEngine.NET&lt;/a&gt; 1.4. This first blog post will detail how to use an OpenID account to login as an existing blog user via impersonation.&amp;#160; I've used Andrew's blog post &lt;a href="http://blog.nerdbank.net/2008/01/how-to-add-openid-support-to.html"&gt;How to add OpenID support to BlogEngine.NET&lt;/a&gt; as a starting place.&amp;#160; &lt;/p&gt;  &lt;p&gt;Pros &lt;/p&gt; &lt;ul&gt;   &lt;li&gt;Quick, minimum changes required &lt;/li&gt;   &lt;li&gt;Retains support of blogging tools (such as Live Writer) &lt;/li&gt;   &lt;li&gt;Easy to understand and backwards compatible &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Cons &lt;/p&gt; &lt;ul&gt;   &lt;li&gt;Not &amp;quot;true&amp;quot; OpenID integration &lt;/li&gt;   &lt;li&gt;Accounts are maintained separately &lt;/li&gt;   &lt;li&gt;Impersonation file is required &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: Download latest release of &lt;a href="http://code.google.com/p/dotnetopenid/"&gt;dotnetopenid&lt;/a&gt; library &lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;: Place DotNetOpenId.dll into Bin folder (if compiling BlogEngine.Web then add reference to project) &lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;: Update Login.aspx page &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;Add&lt;/li&gt; &lt;/ul&gt;  &lt;pre class="xml:nocontrols" name="code"&gt;&amp;lt;%@ Register Assembly=&amp;quot;DotNetOpenId&amp;quot; Namespace=&amp;quot;DotNetOpenId.RelyingParty&amp;quot; TagPrefix=&amp;quot;RP&amp;quot; %&amp;gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Replace&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class="xml:nocontrols:firstline[4]" name="code"&gt;&amp;lt;asp:Login ID=&amp;quot;Login1&amp;quot; runat=&amp;quot;server&amp;quot; class=&amp;quot;loginbox&amp;quot; /&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;with&lt;/p&gt;
+
+&lt;pre class="xml:nocontrols:firstline[4]" name="code"&gt;&amp;lt;RP:OpenIdLogin ID=&amp;quot;OpenIdLogin1&amp;quot; runat=&amp;quot;server&amp;quot; onloggedin=&amp;quot;OpenIdLogin1_LoggedIn&amp;quot; /&amp;gt; &lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 4&lt;/strong&gt;: Update Login.aspx.cs code behind file &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Replace&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class="c#:nocontrols:firstline[20]" name="code"&gt;protected void Page_Load(object sender, EventArgs e) 
+{ 
+  if (Page.User.Identity.IsAuthenticated) 
+  { 
+    changepassword1.Visible = true; 
+    changepassword1.ContinueButtonClick += new EventHandler(changepassword1_ContinueButtonClick); 
+    lsLogout.Visible = true; 
+    Login1.Visible = false; 
+    Page.Title += Resources.labels.changePassword; 
+  }  
+  else 
+  { 
+    Login1.LoggedIn += new EventHandler(Login1_LoggedIn); 
+    Login1.FindControl(&amp;quot;username&amp;quot;).Focus(); 
+  } 
+}&lt;/pre&gt;
+
+&lt;p&gt;with&lt;/p&gt;
+
+&lt;pre class="c#:nocontrols:firstline[20]" name="code"&gt;protected void Page_Load(object sender, EventArgs e) 
+{ 
+  if (Page.User.Identity.IsAuthenticated) 
+  { 
+    changepassword1.Visible = true; 
+    changepassword1.ContinueButtonClick += new EventHandler(changepassword1_ContinueButtonClick); 
+    lsLogout.Visible = true; 
+    OpenIdLogin1.Visible = false; 
+    Page.Title += Resources.labels.changePassword; 
+  } 
+} &lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Replace &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class="c#:nocontrols:firstline[47]" name="code"&gt;void Login1_LoggedIn(object sender, EventArgs e) 
+{ 
+  if (!Roles.IsUserInRole(Login1.UserName, BlogEngine.Core.BlogSettings.Instance.AdministratorRole)) 
+    Response.Redirect(BlogEngine.Core.Utils.RelativeWebRoot, true); 
+}&lt;/pre&gt;
+
+&lt;p&gt;with&lt;/p&gt;
+
+&lt;pre class="c#:nocontrols:firstline[47]" name="code"&gt;protected void OpenIdLogin1_LoggedIn(object sender, DotNetOpenId.RelyingParty.OpenIdEventArgs e) 
+{ 
+  //don't allow login control to login, we will do that manually 
+  e.Cancel = true; 
+  //get impersonated user 
+  string user = Impersonation.Impersonate(e.ClaimedIdentifier); 
+  if (!Roles.IsUserInRole(user, BlogEngine.Core.BlogSettings.Instance.AdministratorRole)) 
+    Response.Redirect(BlogEngine.Core.Utils.RelativeWebRoot, true); 
+  else 
+    FormsAuthentication.RedirectFromLoginPage(user, OpenIdLogin1.RememberMe); 
+}&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 5&lt;/strong&gt;: Add Impersonation.xml file to App_Data folder &lt;/p&gt;
+
+&lt;pre class="xml:nocontrols" name="code"&gt;&amp;lt;impersonation&amp;gt; 
+  &amp;lt;impersonate&amp;gt; 
+    &amp;lt;id&amp;gt;http://jarrettv.myopenid.com/&amp;lt;/id&amp;gt; 
+    &amp;lt;user&amp;gt;Jarrett&amp;lt;/user&amp;gt; 
+  &amp;lt;/impersonate&amp;gt; 
+&amp;lt;/impersonation&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 6&lt;/strong&gt;: Add Impersonation.cs to BlogEngineCore project and compile &lt;/p&gt;
+&lt;pre class="c#:nocontrols" name="code"&gt;using System;
+using System.Linq;
+using System.Xml.Linq;
+using System.Web;
+using System.Web.Hosting;
+
+namespace BlogEngine.Core
+{
+    public class Impersonation
+    {
+        public static string Impersonate(string id)
+        {
+            string user = id;
+            string path = BlogSettings.Instance.StorageLocation + &amp;quot;impersonation.xml&amp;quot;;
+            
+            if (!VirtualPathUtility.IsAppRelative(path))
+                throw new ArgumentException(&amp;quot;xmlFileName must be app-relative&amp;quot;);
+
+            string fullyQualifiedPath = VirtualPathUtility.Combine
+                (VirtualPathUtility.AppendTrailingSlash
+                (HttpRuntime.AppDomainAppVirtualPath), path);
+
+            string actualPath = HostingEnvironment.MapPath(fullyQualifiedPath);
+
+            XDocument xDoc = XDocument.Load(actualPath);
+            user = xDoc.Element(&amp;quot;impersonation&amp;quot;).Elements(&amp;quot;impersonate&amp;quot;)
+                .Where(x =&amp;gt; x.Element(&amp;quot;id&amp;quot;).Value == id).Select(x =&amp;gt; x.Element(&amp;quot;user&amp;quot;)).Single().Value;
+            return user;
+        }
+    }
+}&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 7&lt;/strong&gt;: Deploy following changed files &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Login.aspx &lt;/li&gt;
+  &lt;li&gt;Login.aspx.cs &lt;/li&gt;
+  &lt;li&gt;\Bin\BlogEngine.Core.dll &lt;/li&gt;
+  &lt;li&gt;\Bin\DotNetOpenId.dll &lt;/li&gt;
+  &lt;li&gt;\App_Data\Impersonation.xml &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="91" alt="image" src="/media/OpenIdLogin.png" width="408" border="0" /&gt; &lt;/p&gt;
+
+&lt;p&gt;In the next part, I will add OpenID support to the comment system.&lt;/p&gt;
+
+&lt;div class="wlWriterSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:9c1b3e4d-2cc0-46c4-bf43-d6c7842afcdc" style="padding-right: 0px; display: inline; padding-left: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px"&gt;Technorati Tags: &lt;a href="http://technorati.com/tags/openid" rel="tag"&gt;openid&lt;/a&gt;,&lt;a href="http://technorati.com/tags/asp.net" rel="tag"&gt;asp.net&lt;/a&gt;,&lt;a href="http://technorati.com/tags/c#" rel="tag"&gt;c#&lt;/a&gt;,&lt;a href="http://technorati.com/tags/blogengine" rel="tag"&gt;blogengine&lt;/a&gt;&lt;/div&gt;</atom:content>
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="BlogEngineNET" label="BlogEngine.NET" />
+  <atom:category term="CSharp" label="C#" />
+  <atom:published>2008-07-05T18:26:00-05:00</atom:published>
+  <app:control>
+    <app:draft>no</app:draft>
+  </app:control>
+  <atom:updated>2008-09-11T20:25:59.079-05:00</atom:updated>
+  <atom:id>tag:jvance.com,2008-07-05:blog,Add-OpenID-to-BlogEngineNET-14-Part-1</atom:id>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>5</svc:ratingSum>
+  <svc:raters>146.126.51.51</svc:raters>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.866Z</app:edited>
+</atom:entry>

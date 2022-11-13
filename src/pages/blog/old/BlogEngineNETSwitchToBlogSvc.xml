@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/09/12/BlogEngineNETSwitchToBlogSvc.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:title>BlogEngine.NET Switch to BlogSvc</atom:title>
+  <atom:content type="html">&lt;p&gt;I’ve switched my blog from &lt;a href="http://dotnetblogengine.net"&gt;BlogEngine.NET&lt;/a&gt; to my very own &lt;a href="http://blogsvc.net"&gt;BlogSvc&lt;/a&gt;.&amp;#160; I lose a few features (temporarily) but I gain huge amounts of confidence.&amp;#160; One of the top reasons for ditching BlogEngine.NET was how poorly the security is implemented.&amp;#160; In a &lt;a href="http://jvance.com/blog/2008/07/10/Comments-Security-Hole-BlogEngineNET-14.xhtml"&gt;previous post&lt;/a&gt; I detailed how a malicious user could delete comments from anyone’s blog running BlogEngine.NET 1.4.&amp;#160; BlogSvc was designed from the ground up to be secure and support multiple &lt;a href="http://blogsvc.net/info/Roles.xhtml"&gt;roles&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;The process of switching was very straight forward.&amp;#160; I hacked up some code that would read a BlogML file and generate a new service document with a workspace and collection.&amp;#160; The service was then used to turn the blog posts (and comments) into atom entries.&amp;#160; Once this was done I simply uploaded all the files to my hosting provider.&lt;/p&gt;  &lt;p&gt;I did hit one snag.&amp;#160; My hosting provider &lt;a href="http://aspnix.com"&gt;Aspnix&lt;/a&gt; has installed &lt;a href="http://blogs.iis.net/nazim/archive/2008/08/19/urlscan-v3-0-rtw-released.aspx"&gt;UrlScan&lt;/a&gt; on the IIS7 server.&amp;#160; This has the unfortunate side effect of blocking any PUT and DELETE commands.&amp;#160; So, until they &lt;a href="http://learn.iis.net/page.aspx/143/how-to-use-request-filtering/"&gt;update the UrlScan configuration&lt;/a&gt;, I won’t be able to use LiveWriter to update or delete posts.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Test Update&lt;/strong&gt;&lt;/p&gt;  </atom:content>
+  <atom:updated>2008-09-12T15:49:29.4420887-06:00</atom:updated>
+  <atom:id>tag:jvance.com,2008-09-12:blog,BlogEngineNETSwitchToBlogSvc</atom:id>
+  <svc:ratingCount>2</svc:ratingCount>
+  <svc:ratingSum>9</svc:ratingSum>
+  <svc:raters>71.91.79.184;146.126.51.51</svc:raters>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.812Z</app:edited>
+</atom:entry>

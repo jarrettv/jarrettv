@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://blogsvc.net/blog/2009/01/31/UpdateToASPdotNETMVCRC1.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <app:control />
+  <atom:published>2009-01-31T06:05:09.2438298Z</atom:published>
+  <atom:title>Update to ASP.NET MVC RC1</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>I've <a href="http://www.codeplex.com/blogsvc/SourceControl/ListDownloadableCommits.aspx)">
+checked in the code</a> to update BlogSvc to ASP.NET <a href="http://www.asp.net/mvc/">MVC</a> RC1 Refresh.  There were
+only minor updates to get things workings and the overall process
+only took around 10 minutes.  However, the readme notes on the
+configuration are misleading.  The release notes tell you to update
+the pages section to look like:</p>
+      <p style="font-size: 70%">
+&lt;pages</p>
+      <p style="font-size: 70%">
+        <span style="color: #ff0000">validateRequest</span>="<span style="color: #0000ff">false</span>"</p>
+      <p style="font-size: 70%">
+        <strong style="color: #ff0000">pageParserFilterType</strong>
+        <strong>=</strong>
+        <strong>"</strong>
+        <strong style="color: #0000ff">System.Web.Mvc.ViewTypeParserFilter,
+System.Web.Mvc, Version=1.0.0.0, Culture=neutral,
+PublicKeyToken=31BF3856AD364E35</strong>
+        <strong>"</strong>
+      </p>
+      <p style="font-size: 70%">
+        <strong style="color: #ff0000">pageBaseType</strong>
+        <strong>=</strong>
+        <strong>"</strong>
+        <strong style="color: #0000ff">System.Web.Mvc.ViewPage, System.Web.Mvc,
+Version=1.0.0.0, Culture=neutral,
+PublicKeyToken=31BF3856AD364E35</strong>
+        <strong>"</strong>
+      </p>
+      <p style="font-size: 70%">
+        <strong style="color: #ff0000">userControlBaseType</strong>
+        <strong>=</strong>
+        <strong>"</strong>
+        <strong style="color: #0000ff">System.Web.Mvc.ViewUserControl,
+System.Web.Mvc, Version=1.0.0.0, Culture=neutral,
+PublicKeyToken=31BF3856AD364E35</strong>
+        <strong>"</strong>
+        <strong>&gt;</strong>
+      </p>
+      <p>This is not necessary as
+you'll notice when creating a new MVC project that three bolded
+lines are not included.  When I added the lines to my config it
+caused errors on my hosting provider.</p>
+    </div>
+  </atom:content>
+  <atom:category term="AspNet" label="Asp.Net" />
+  <atom:category term="BlogSvc" />
+  <atom:category term="MVC" />
+  <atom:updated>2009-02-01T17:56:11.1701461Z</atom:updated>
+  <atom:id>tag:blogsvc.net,2008:blog,UpdateToASPdotNETMVCRC1</atom:id>
+  <atom:author>
+    <atom:name>Jarrett</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.364Z</app:edited>
+</atom:entry>

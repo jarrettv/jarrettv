@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0" xml:base="http://jvance.com/blog/2009/06/28/HtpcMiniCase5.atom">
+  <atom:id>tag:jvance.com,2009-06-28:blog,HtpcMiniCase5</atom:id>
+  <app:control>
+    <app:draft>no</app:draft>
+    <svc:approved>yes</svc:approved>
+    <svc:allowAnnotate>yes</svc:allowAnnotate>
+  </app:control>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:title>Tiny HTPC Movie and Hulu Box Part 5 Conclusion</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <ol>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/01/HtpcMiniCase.xhtml">Case</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/10/HtpcMiniCase2.xhtml">Parts</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/14/HtpcMiniCase3.xhtml">Hardware
+Test</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/23/HtpcMiniCase4.xhtml">Assembly</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/28/HtpcMiniCase5.xhtml">
+              <strong>
+Conclusion</strong>
+            </a>
+          </div>
+        </li>
+      </ol>
+      <p>The two 50mm fans arrived and I put them into their new home. 
+To line them up in the back, I raised them up on a small piece of
+wood and tie-wrapped them into place. They are the perfect height
+for the case.  I used some aluminum to fill in the blank spaces.  I
+got lazy at the end and used a wood block to plug the last
+space.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/28/HuluBox0064.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 006" alt="Hulu Box 006" src="http://jvance.com/media/2009/06/28/HuluBox006_thumb2.media" />
+        </a>
+        <a href="http://jvance.com/media/2009/06/28/HuluBox0135.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 013" alt="Hulu Box 013" src="http://jvance.com/media/2009/06/28/HuluBox013_thumb3.media" />
+        </a>
+      </p>
+      <p>The HTPC made too much noise with these new fans so I made a
+couple modifications:</p>
+      <ul>
+        <li>Change fans to run from 5 volt instead of 12 volt (from 5000rpm
+down to 2100rpm) <a href="http://www.hardwaresecrets.com/article/496/3">see
+here</a></li>
+        <li>Remove some of the metal blocking the PSU fan</li>
+      </ul>
+      <p>The noise is now on par with the original Xbox.  I plan to
+replace the PSU fan with a silent 40mm fan from <a href="http://frozencpu.com">FrozenCPU</a> to further reduce the
+noise.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/28/HuluBox0359.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 035" alt="Hulu Box 035" src="http://jvance.com/media/2009/06/28/HuluBox035_thumb5.media" />
+        </a>
+      </p>
+      <p>I also removed the casing over the PSU and organized the wires
+for better air flow. I taped over some of the rear holes so the air
+would enter from the front and travel across the motherboard.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/28/HuluBox00921.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 009" alt="Hulu Box 009" src="http://jvance.com/media/2009/06/28/HuluBox009_thumb17.media" />
+        </a>
+ <a href="http://jvance.com/media/2009/06/28/HuluBox0105.media"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 010" alt="Hulu Box 010" src="http://jvance.com/media/2009/06/28/HuluBox010_thumb3.media" /></a></p>
+      <table border="1" cellpadding="2" width="560">
+        <tbody>
+          <tr>
+            <td valign="top">
+              <strong>Temps</strong>
+            </td>
+            <td valign="top">
+              <strong>CPU 1</strong>
+            </td>
+            <td valign="top">
+              <strong>CPU 2</strong>
+            </td>
+            <td valign="top">
+              <strong>Northbridge</strong>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <strong>Idle</strong>
+            </td>
+            <td valign="top">32 C</td>
+            <td valign="top">33 C</td>
+            <td valign="top">48 C</td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <strong>Load</strong>
+            </td>
+            <td valign="top">58 C</td>
+            <td valign="top">60 C</td>
+            <td valign="top">55 C</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>The Rear</h4>
+      <p>The motherboard IO panel fit perfectly between the top and
+bottom of the case.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/28/HuluBox0387.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 038" alt="Hulu Box 038" src="http://jvance.com/media/2009/06/28/HuluBox038_thumb5.media" />
+        </a>
+      </p>
+      <h4>The Front</h4>
+      <p>I lightly sanded the sharp edges of the black plexi-glass.  I
+did not have any extra fine sandpaper so I used a buffing pad to
+get a smooth matte match with the case.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/28/HuluBox0246.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 024" alt="Hulu Box 024" src="http://jvance.com/media/2009/06/28/HuluBox024_thumb4.media" />
+        </a>
+      </p>
+      <p>The keyboard is a <a href="http://www.logitech.com/index.cfm/keyboards/keyboard/devices/3848&amp;cl=US,EN">
+Logitech diNovo Mini</a> and compliments the case really well.  The
+Zotac ITX motherboard allows you to enter the BIOS using the Delete
+key.  So even though the keyboard doesn't have function keys, it
+will still work in the BIOS.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/28/HuluBox0416.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 041" alt="Hulu Box 041" src="http://jvance.com/media/2009/06/28/HuluBox041_thumb4.media" />
+        </a>
+      </p>
+      <p>Here it is in it's final resting place on the fireplace mantel. 
+You can see the Wii on the right for comparison.</p>
+      <p> <a href="http://jvance.com/media/2009/06/28/HuluBox0469.media"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 046" alt="Hulu Box 046" src="http://jvance.com/media/2009/06/28/HuluBox046_thumb5.media" /></a></p>
+      <p>I'm very happy with how the custom modded case turned out. The
+motherboard, PSU, fans, buttons, and black plexiglass all came
+together much better than I expected.  It is a cool, quiet, and
+beautiful computer.  Most of all, it plays every file format and
+can run video from any website perfectly.</p>
+      <p>I recently installed <a href="http://www.boxee.tv/">Boxee</a>
+and I've been watching some 1080p files and listening to <a href="http://www.pandora.com/">Pandora</a> all within the same
+interface.  Boxee is definitely the future of the HTPC.</p>
+    </div>
+  </atom:content>
+  <atom:category term="Computers" />
+  <atom:category term="HTPC" />
+  <atom:published>2009-06-27T22:03:00-05:00</atom:published>
+  <atom:updated>2009-07-18T17:55:45.2353912Z</atom:updated>
+  <app:edited>2009-07-18T17:55:45.2353912Z</app:edited>
+</atom:entry>

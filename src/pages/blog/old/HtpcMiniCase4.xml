@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0" xml:base="http://jvance.com/blog/2009/06/23/HtpcMiniCase4.atom">
+  <atom:id>tag:jvance.com,2009-06-23:blog,HtpcMiniCase4</atom:id>
+  <app:control />
+  <atom:published>2009-06-23T05:13:18.2658655Z</atom:published>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:title>Tiny HTPC Movie and Hulu Box Part 4 Assembly</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <ol>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/01/HtpcMiniCase.xhtml">Case</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/10/HtpcMiniCase2.xhtml">Parts</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/14/HtpcMiniCase3.xhtml">Hardware
+Test</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/23/HtpcMiniCase4.xhtml">
+              <strong>
+Assembly</strong>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/28/HtpcMiniCase5.xhtml">Conclusion</a>
+          </div>
+        </li>
+      </ol>
+      <p>I created the front from a
+scrap piece of black plexi-glass found at a local glass supplier:
+<a href="http://maps.google.com/maps?key=ABQIAAAA2lr2IHJcvjrj6QReXB-r-BSXJwxcdmHCy6xdgthmS6EFx26dxhQYIXViRzNe6XEl_mTlVS9ScjCt7w&amp;mapclient=jsapi&amp;ie=UTF8&amp;ll=30.55791,-87.89349&amp;spn=0,359.990355&amp;t=h&amp;z=17&amp;layer=c&amp;cbll=30.557991,-87.893505&amp;panoid=h_e-cKK6ZqIOYZmjMprZZQ&amp;cbp=12,97.89,,0,5">
+Eastern Shore Glass</a>.  They cut it for me by scoring and
+snapping it. They were extremely nice and helpful. I got two
+pre-cut pieces and some scrap all for $8.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/23/HuluBox0085.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 008" alt="Hulu Box 008" src="http://jvance.com/media/2009/06/23/HuluBox008_thumb3.media" />
+        </a>
+      </p>
+      <p>I drilled holes in the
+plexiglass for the buttons and LEDs.</p>
+      <p> <a href="http://jvance.com/media/2009/06/23/HuluBox0075.media"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 007" alt="Hulu Box 007" src="http://jvance.com/media/2009/06/23/HuluBox007_thumb3.media" /></a></p>
+      <p>Drilling a hole in
+plexiglass greater than 1/4" is tricky.  I needed to start with a
+smaller bit and keep increasing the size to keep shards from
+breaking off.</p>
+      <p>On the back side of the
+black plexiglass I created a frame from aluminum that I could use
+to mount it to the case. I used brass screws to match the case
+feet.</p>
+      <p>Working with aluminum is
+fun as it is a fairly soft metal that is easy to drill and cut.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/23/HuluBox0215.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 021" alt="Hulu Box 021" src="http://jvance.com/media/2009/06/23/HuluBox021_thumb3.media" />
+        </a>
+      </p>
+      <p>The buttons are held in
+place with wood and hot glue. The LEDs are simply hot glued in
+place.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/23/HuluBox0275.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 027" alt="Hulu Box 027" src="http://jvance.com/media/2009/06/23/HuluBox027_thumb3.media" />
+        </a>
+        <a href="http://jvance.com/media/2009/06/23/HuluBox0325.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 032" alt="Hulu Box 032" src="http://jvance.com/media/2009/06/23/HuluBox032_thumb3.media" />
+        </a>
+      </p>
+      <p>I bolted the plexiglass
+aluminum frame to the case.  On the bottom of the case, I drilled
+and cut holes for air intake.  The cool air enters from below and
+travels across the motherboard to exit out the rear via fans. 
+There are no vents on the top or sides.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/23/HuluBox0126.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 012" alt="Hulu Box 012" src="http://jvance.com/media/2009/06/23/HuluBox012_thumb4.media" />
+        </a>
+      </p>
+      <p>I mounted the power supply
+in the case using a single bolt which keeps it from sliding
+backward when plugging in.  I used wood spacers covered with a thin
+layer of foam to allow the PSU to be sandwiched between the top and
+bottom of the case.  A small bracket made from aluminum provides
+enough friction to keep the PSU firmly in place.</p>
+      <p>
+        <strong>Update</strong>:
+I've since removed the power supply circuit board from the casing
+and created a new solid backplate so I could reduce the number of
+fans needed in the case.  I also added additional holes below the
+PSU circuit board to bring in cool air.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/23/HuluBox02810.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 028" alt="Hulu Box 028" src="http://jvance.com/media/2009/06/23/HuluBox028_thumb6.media" />
+        </a>
+      </p>
+      <p>I mounted the motherboard
+by drilling four holes and using small bolts.  The rubber feet act
+as standoffs to raise the motherboard up to the desired height.  It
+also allows air to easily travel below and around the board.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/23/HuluBox0346.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Hulu Box 034" alt="Hulu Box 034" src="http://jvance.com/media/2009/06/23/HuluBox034_thumb4.media" />
+        </a>
+      </p>
+      <p>In the <a href="http://jvance.com/blog/2009/06/28/HtpcMiniCase5.xhtml">next
+part</a>, I'll mount the fans, round the edges of the plexiglass
+and show the final photos of it in action.</p>
+    </div>
+  </atom:content>
+  <atom:category term="Computers" />
+  <atom:category term="HTPC" />
+  <atom:updated>2009-07-06T18:45:38.4609683Z</atom:updated>
+  <app:edited>2009-07-06T18:45:38.4609683Z</app:edited>
+</atom:entry>

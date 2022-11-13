@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/12/11/BitrateCalculator.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-12-11T16:28:32.0411585Z</atom:published>
+  <atom:title>Bitrate Calculator</atom:title>
+  <atom:content type="html">&lt;p&gt;&amp;#160;&lt;img title="BitrateCalc" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="427" alt="BitrateCalc" src="http://jvance.com/media/2008/12/11/BitrateCalc_thumb6.media" width="730" border="0" /&gt; &lt;img title="Codec Efficiency Ranges" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="393" alt="Codec Efficiency Ranges" src="http://jvance.com/media/2008/12/11/CodecEfficiencyRanges6.media" width="636" border="0" /&gt;&lt;/p&gt;  </atom:content>
+  <atom:category term="HTPC" />
+  <app:control>
+    <app:draft>yes</app:draft>
+  </app:control>
+  <atom:updated>2008-12-13T07:06:01.4939768Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-12-11:blog,BitrateCalculator</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.466Z</app:edited>
+</atom:entry>

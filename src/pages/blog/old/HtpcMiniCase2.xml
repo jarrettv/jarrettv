@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0" xml:base="http://jvance.com/blog/2009/06/10/HtpcMiniCase2.atom">
+  <atom:id>tag:jvance.com,2009-06-10:blog,HtpcMiniCase2</atom:id>
+  <app:control>
+    <svc:approved>yes</svc:approved>
+    <svc:allowAnnotate>yes</svc:allowAnnotate>
+  </app:control>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:published>2009-06-09T21:00:00-05:00</atom:published>
+  <atom:title>Tiny HTPC Movie and Hulu Box Part 2 The Parts</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <ol>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/01/HtpcMiniCase.xhtml">Case</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/10/HtpcMiniCase2.xhtml">
+              <strong>
+Parts</strong>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/14/HtpcMiniCase3.xhtml">Hardware
+Test</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/23/HtpcMiniCase4.xhtml">Assembly</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/28/HtpcMiniCase5.xhtml">Conclusion</a>
+          </div>
+        </li>
+      </ol>
+      <p>
+        <a href="http://jvance.com/media/2009/06/10/HtpcParts24.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="HtpcParts2" alt="HtpcParts2" src="http://jvance.com/media/2009/06/10/HtpcParts2_thumb2.media" />
+        </a>
+      </p>
+      <p>I ordered the parts today
+from <a href="http://newegg.com">Newegg</a>.</p>
+      <ul>
+        <li>
+          <strong>Power Supply</strong>
+          <br />
+          <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16817104067">
+FSP Group FSP180-50PLA 180W Single Server Power Supply -
+OEM</a>
+        </li>
+        <li>
+          <strong>CPU Fan</strong>
+          <br />
+          <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16835887018">
+ZEROtherm ATOM 30H Low-Profile cooler for ITX, MATX, HTPC-Retail -
+Retail</a>
+        </li>
+        <li>
+          <strong>Motherboard</strong>
+          <br />
+          <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16813500022">
+ZOTAC GF9300-D-E LGA 775 NVIDIA GeForce 9300 HDMI WiFi Mini ITX
+Intel Motherboard - Retail</a>
+        </li>
+        <li>
+          <strong>CPU</strong>
+          <br />
+          <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16819116091">
+Intel Pentium E6300 Wolfdale 2.8GHz LGA 775 65W Dual-Core Processor
+Model BX80571E6300 - Retail</a>
+        </li>
+        <li>
+          <strong>Memory</strong>
+          <br />
+          <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16820231166">
+G.SKILL 4GB (2 x 2GB) 240-Pin DDR2 SDRAM DDR2 1066 (PC2 8500) Dual
+Channel Kit Desktop Memory Model F2-8500CL5D-4GBPK -
+Retail</a>
+        </li>
+      </ul>
+      <p>The video is built into the
+motherboard and I plan to reuse a hard drive I already have.  I'm
+hoping to get away with just using a Media Center remote control or
+a smaller bluetooth keyboard once things are setup.  Also, I will
+leave open the option of adding a full-size DVD/Bluray drive in the
+future.</p>
+      <p>These parts are powerful
+enough to do everything I need.</p>
+      <p>In the <a href="http://jvance.com/blog/2009/06/14/HtpcMiniCase3.xhtml">next
+part</a>, I'll assemble the parts and load the OS to test out the
+components.</p>
+    </div>
+  </atom:content>
+  <atom:category term="Computers" />
+  <atom:category term="HTPC" />
+  <atom:updated>2009-07-18T18:01:41.1444263Z</atom:updated>
+  <app:edited>2009-07-18T18:01:41.1444263Z</app:edited>
+</atom:entry>

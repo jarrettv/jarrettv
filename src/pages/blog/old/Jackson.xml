@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0" xml:base="http://jvance.com/blog/2009/06/23/Jackson.atom">
+  <atom:id>tag:jvance.com,2009-06-23:blog,Jackson</atom:id>
+  <app:control />
+  <atom:published>2009-06-23T04:21:00.1799338Z</atom:published>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:title>Jackson</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">  
+
+<p><a href="http://jvance.com/media/2009/06/23/Jackson01638.media"><img style="border-width:0;height:284;width:470;border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" title="Jackson 016" alt="Jackson 016" src="http://jvance.com/media/2009/06/23/Jackson016_thumb30.media" /></a></p><p>Jackson</p></div>
+  </atom:content>
+  <atom:updated>2009-06-23T04:26:51.5576054Z</atom:updated>
+  <app:edited>2009-06-23T04:26:51.5576054Z</app:edited>
+</atom:entry>

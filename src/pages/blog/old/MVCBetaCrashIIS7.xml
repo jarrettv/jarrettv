@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/10/16/MVCBetaCrashIIS7.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-10-16T17:33:00-05:00</atom:published>
+  <atom:title>ASP.Net MVC Beta Crashing IIS7</atom:title>
+  <atom:content type="html">&lt;p&gt;With the new beta release of the &lt;a href="http://www.asp.net/mvc/"&gt;MVC&lt;/a&gt; framework, I updated BlogSvc to compile and run with the new dlls that are now in the GAC.&amp;#160; After deleting from the gac and finally copying the dlls to my bin folder I things running smoothly from within Visual Studio.&amp;#160; However, when I deploy to IIS7, I am getting a crash.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://jvance.com/media/2008/10/16/AspNetMvcBetaIis7Crash7.media"&gt;&lt;img title="AspNetMvcBetaIis7Crash" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="366" alt="AspNetMvcBetaIis7Crash" src="http://jvance.com/media/2008/10/16/AspNetMvcBetaIis7Crash_thumb5.media" width="436" border="0" /&gt;&lt;/a&gt; &lt;/p&gt;   &lt;p&gt;I’ve tried cleaning out all the applications in my IIS and also restarted the AppDomains, sites, servers.&amp;#160; I’ve also tried rebooting.&amp;#160; Anyone have any idea’s?&amp;#160; Does the beta run on your IIS7 in Vista?&lt;/p&gt;   &lt;p&gt;I’ve asked this question on StackOverflow: &lt;a href="http://stackoverflow.com/questions/210544/why-is-aspnet-mvc-beta-crashing-my-iis7"&gt;Why is Asp.net MVC Beta crashing my IIS7?&lt;/a&gt;&lt;/p&gt;   &lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: I toggled data execution preventions (DEP) and a couple a reboots later and the issue cleared up.&lt;/p&gt;  </atom:content>
+  <atom:category term="MVC" label="MVC" />
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:updated>2008-10-17T23:41:19.2170619Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-10-16:blog,MVCBetaCrashIIS7</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.53Z</app:edited>
+</atom:entry>

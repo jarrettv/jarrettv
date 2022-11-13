@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:app="http://www.w3.org/2007/app">
+  <atom:title>Team System Quick Start Links</atom:title>
+  <atom:content type="html">&lt;p&gt;Here are some great links to jump-start your learning about VSTS. &lt;/p&gt; &lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/vsts2008/products/cc149003.aspx"&gt;Visual Studio 2008 Product Comparison&lt;/a&gt; - Use this to figure out which version you or your team members will need.&lt;/p&gt; &lt;p&gt;&lt;a href="http://www.codeplex.com/TFSGuide"&gt;Patterns &amp;amp; Practices: Team Development with TFS Guide&lt;/a&gt; - Great guide for understanding best practices around TFS.&amp;nbsp; This is a must read.&lt;/p&gt; &lt;p&gt;&lt;a href="http://blogs.msdn.com/robcaron/"&gt;Rob Carbon's Blog : Provides Links to Team System Resources&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href="http://www.tfstimes.com/"&gt;TFS Times Monthly Newsletter&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href="http://www.tfsbuild.com"&gt;TFS Build Configurations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href="http://www.codeplex.com/tfseventsubscription"&gt;TFS Event Subscriptions&lt;/a&gt; - Tool to create nice customized email subscriptions to TFS events.&lt;/p&gt; &lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/tfs2008/bb980963.aspx"&gt;Visual Studio Team System 2008 Team Foundation Server Power Tools&lt;/a&gt; - Build notification, process template editor, custom check-in policy pack, and more.&lt;/p&gt; &lt;p&gt;&lt;a href="http://teamsystemrocks.com/tutorials/"&gt;Team System Rocks: Provides Tutorial Videos and Other Info&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href="http://codeplex.com/Project/ProjectDirectory.aspx?ProjectSearchText=TFS"&gt;Open Source Addins on CodePlex&lt;/a&gt; - Large amount of community support projects with plugins and customizations for Team System.&lt;/p&gt; &lt;p&gt;&lt;a href="http://blogs.vertigosoftware.com/teamsystem/default.aspx"&gt;Vertigo Software Blog: Visual Studio Team System: tips, tricks, and techniques&lt;/a&gt; - A good blog that contains common error messages and tips for customizing or extending the usage of team system.&amp;nbsp; It also has a good comparison between the different editions of team system (for 2005 version but still relevant for 2008).&lt;/p&gt; &lt;p&gt;&lt;a title="TFS Project Solution is Offline" href="http://blogs.msdn.com/benryan/archive/2007/12/12/when-and-how-does-my-solution-go-offline.aspx"&gt;When and how does my solution go "offline"?&lt;/a&gt; - This blog helps explain how and why a solution will go offline.&amp;nbsp; I particularly found the the registry setting useful when I could not bind my solution / projects to the server.&amp;nbsp; Team Explorer thought the server was offline when it really wasn't. &lt;/p&gt;</atom:content>
+  <atom:published>2008-07-17T10:52:55-05:00</atom:published>
+  <app:control>
+    <app:draft>no</app:draft>
+  </app:control>
+  <atom:updated>2008-09-11T20:25:59.049-05:00</atom:updated>
+  <atom:id>tag:jvance.com,2008-07-17:blog,Team-System-Quick-Start-Links</atom:id>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>5</svc:ratingSum>
+  <svc:raters>71.91.79.184</svc:raters>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.848Z</app:edited>
+</atom:entry>

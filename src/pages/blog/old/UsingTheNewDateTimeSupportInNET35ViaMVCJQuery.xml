@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/10/09/UsingTheNewDateTimeSupportInNET35ViaMVCJQuery.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:published>2008-10-09T03:24:19.7752096Z</atom:published>
+  <app:control />
+  <atom:title>Using the New DateTime Support in .NET 3.5 via MVC &amp; jQuery</atom:title>
+  <atom:content type="html">&lt;p&gt;I’ve added &lt;a href="http://blogsvc.net/blog/2008/10/08/NewGlobalDateAndTimeSupport.xhtml"&gt;&lt;strong&gt;New Global Date and Time Support&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;&amp;#160;&lt;/strong&gt;to BlogSvc by utilizing the new expanded support for date times with proper time zone support.&amp;#160; Some highlights in the &lt;a href="http://msdn.microsoft.com/en-us/library/bb384267.aspx"&gt;MSDN documentation&lt;/a&gt;:&lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;The &lt;a href="http://msdn.microsoft.com/en-us/library/system.datetimeoffset.aspx"&gt;DateTimeOffset&lt;/a&gt; structure represents a date and time value, together with an offset that indicates how much that value differs from UTC. Thus, the value always unambiguously identifies a single point in time. A &lt;a href="http://msdn.microsoft.com/en-us/library/system.datetimeoffset.aspx"&gt;DateTimeOffset&lt;/a&gt; value is not tied to a particular time zone, but can originate from any of a variety of time zones. The &lt;a href="http://msdn.microsoft.com/en-us/library/system.timezoneinfo.aspx"&gt;TimeZoneInfo&lt;/a&gt; class makes it possible to work with dates and times so that any date and time value unambiguously identifies a single point in time. Taking advantage of time zone support in the .NET Framework is possible only if the time zone to which a date and time value belongs is known when that date and time object is instantiated.&lt;/p&gt; &lt;/blockquote&gt;  &lt;p&gt;So the MSDN documentation is not clear on which class can make a date/time unambiguous.&amp;#160; However, the last sentence is the best clue.&amp;#160; We must capture both the UTC value and an originating time zone.&lt;/p&gt;  &lt;p&gt;For an ASP.NET &lt;a href="http://www.asp.net/mvc/"&gt;MVC&lt;/a&gt; application we can add configuration to associate all date/times to our preferred time zone.&amp;#160; &lt;/p&gt;  &lt;p&gt;&lt;img title="TimeZoneSettings" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="171" alt="TimeZoneSettings" src="http://jvance.com/media/2008/10/09/TimeZoneSettings5.media" width="443" border="0" /&gt; &lt;/p&gt;  &lt;p&gt;With this configuration, we can now write an HtmlHelper extension to display a DateTimeOffset in our preferred time zone.&lt;/p&gt;  &lt;p&gt;&lt;img title="DateTimeAbbrHelper" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="134" alt="DateTimeAbbrHelper" src="http://jvance.com/media/2008/10/09/DateTimeAbbrHelper5.media" width="730" border="0" /&gt; &lt;/p&gt;  &lt;p&gt;Call the extension method and pass it either a DateTimeOffset or a DateTime.&lt;img title="AbbrUsage" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="93" alt="AbbrUsage" src="http://jvance.com/media/2008/10/09/AbbrUsage5.media" width="531" border="0" /&gt; &lt;/p&gt;  &lt;p&gt;This will result in the follwing html:&lt;/p&gt;  &lt;pre&gt;&amp;lt;&lt;font color="#800000"&gt;abbr&lt;/font&gt; &lt;font color="#ff0000"&gt;title&lt;/font&gt;=&lt;font color="#0000ff"&gt;'Tuesday, October 07, 2008 10:01 PM (GMT-06:00) Central Time (US &amp;amp;amp; Canada)'&lt;/font&gt;&amp;gt;10/7/2008 10:01 PM - CST&amp;lt;/&lt;font color="#800000"&gt;abbr&lt;/font&gt;&lt;font color="#0000ff"&gt;&amp;gt;&lt;/font&gt;&lt;/pre&gt;
+
+&lt;p&gt;This gives an abbreviated date/time display at your preferred time zone.&lt;/p&gt;
+
+&lt;p&gt;However, you may want to display time relative to the user browsing your website. There are two ways to accomplish this: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ask and store each user’s time zone &lt;/li&gt;
+
+  &lt;li&gt;Automatically determine user’s time zone using javascript &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first option is commonly used with forums and requires the user to register and choose their preferred time zone. The second option makes much more sense for content websites (such as a blog) since it can occur automatically without registration.&lt;/p&gt;
+
+&lt;p&gt;There is already a great plugin for &lt;a href="http://jquery.com"&gt;jQuery&lt;/a&gt; that can display fuzzy times that are directly relative to the user.&amp;#160; It is called the &lt;a href="http://timeago.yarp.com/"&gt;Time Ago Plugin&lt;/a&gt;.&amp;#160; To use it, lets create another helper extension that utilizes a micro-format:&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="TimeAgoAbbrHelper" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="151" alt="TimeAgoAbbrHelper" src="http://jvance.com/media/2008/10/09/TimeAgoAbbrHelper5.media" width="729" border="0" /&gt; &lt;/p&gt;
+
+&lt;p&gt;This creates abbreviations in the html, that when activated through jQuery show times that will be automatically updated even after the user has loaded the page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="TimeAgoDisplay" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="190" alt="TimeAgoDisplay" src="http://jvance.com/media/2008/10/09/TimeAgoDisplay6.media" width="451" border="0" /&gt; &lt;/p&gt;
+
+&lt;p&gt;This DateTime display is much more recognizable and personable to the casual user.&lt;/p&gt;
+
+&lt;p&gt;Head on over to the &lt;a href="http://blogsvc.net"&gt;BlogSvc&lt;/a&gt; website to download the code.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update: &lt;/strong&gt;here is a bonus function that will allow you to format the date (with access to the time zone information) anyway you’d like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="DateTimeAbbrHelperBonus" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="151" alt="DateTimeAbbrHelperBonus" src="http://jvance.com/media/2008/10/09/DateTimeAbbrHelperBonus5.media" width="727" border="0" /&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Call it like:&lt;img title="DateTimeAbbrHelperBonusCall" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="21" alt="DateTimeAbbrHelperBonusCall" src="http://jvance.com/media/2008/10/09/DateTimeAbbrHelperBonusCall5.media" width="577" border="0" /&gt;&lt;/p&gt;  </atom:content>
+  <atom:category term="BlogSvc" />
+  <atom:category term="CSharp" label="C#" />
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="jQuery" />
+  <atom:category term="MVC" label="MVC" />
+  <atom:updated>2008-10-09T04:19:09.5873512Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-10-09:blog,UsingTheNewDateTimeSupportInNET35ViaMVCJQuery</atom:id>
+  <svc:ratingCount>3</svc:ratingCount>
+  <svc:ratingSum>12</svc:ratingSum>
+  <svc:raters>71.91.79.184;207.67.84.97;122.173.139.29</svc:raters>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.56Z</app:edited>
+</atom:entry>

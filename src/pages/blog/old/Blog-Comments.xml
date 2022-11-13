@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:app="http://www.w3.org/2007/app">
+  <atom:title>Blog Comments</atom:title>
+  <atom:content type="html">Notifications Ajax Preview coComments Captcha FlagImage? CheckAuthorName BbCode Impersonation</atom:content>
+  <atom:published>2008-07-10T16:28:03-05:00</atom:published>
+  <app:control>
+    <app:draft>no</app:draft>
+  </app:control>
+  <atom:updated>2008-09-11T20:25:59.071-05:00</atom:updated>
+  <atom:id>tag:jvance.com,2008-07-10:blog,Blog-Comments</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.861Z</app:edited>
+</atom:entry>

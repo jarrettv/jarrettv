@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2009/01/13/TestWLWTwitterPlugin.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <app:control />
+  <atom:published>2009-01-13T22:05:14.976071Z</atom:published>
+  <atom:title>Test WLW Twitter Plugin</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>This post is to test <a href="http://gallery.live.com/liveItemDetail.aspx?li=6b2b5ffe-936a-4cb3-869c-c01de29de176&amp;bt=9">
+WLW Twitter Plugin</a>.</p>
+      <p>It <a href="http://twitter.com/jarrettv/status/1116749303">worked</a>! 
+You can configure it upon your first post after installing the
+plugin.</p>
+    </div>
+  </atom:content>
+  <atom:category term="BlogSvc" />
+  <atom:updated>2009-01-13T22:18:25.0037985Z</atom:updated>
+  <atom:id>tag:jvance.com,2009-01-13:blog,TestWLWTwitterPlugin</atom:id>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>4</svc:ratingSum>
+  <svc:raters>71.91.79.184</svc:raters>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.37Z</app:edited>
+</atom:entry>

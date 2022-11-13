@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2009/03/09/AtomServer09NearlyReady.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <app:control />
+  <atom:published>2009-03-09T21:05:26.275079Z</atom:published>
+  <atom:title>AtomSite 0.9 Nearly Ready</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <img style="border-width:0;height:50;width:446;border-top-width: 0px; display: block; border-left-width: 0px; float: none; border-bottom-width: 0px; margin-left: auto; margin-right: auto; border-right-width: 0px" title="BlogSvcToAtomSite" alt="BlogSvcToAtomSite" src="http://jvance.com/media/2009/03/15/BlogSvcToAtomSite6.media" /> 
+I'm excited about the next release of <a href="http://blogsvc.net">BlogSvc</a>, which going forward will
+have the new name of <a href="http://atomsite.net">AtomSite</a>.  I
+have put my architect hat on to design and build a plugin/widget
+system.  Along the way I've learned how to build an extremely
+modular web application <a href="http://dev.dejardin.org/usage/modularity">based on the
+ideas</a> pioneered by Louis DeJardin of the <a href="http://dev.dejardin.org/home">Spark engine</a>.  We do not
+(yet) use the Spark view engine.  However, it does support it.</p>
+      <p>The plug-in model supports:</p>
+      <ul>
+        <li>Installation 
+
+<ul><li>Drop in bin folder</li><li>Supports extracting embedded theme/script files to correct
+folders</li></ul></li>
+        <li>Register Additional View Engines</li>
+        <li>Registering Routes 
+
+<ul><li>Supports collection constraints</li><li>Support for multiple workspaces (areas)</li><li>Support for secure routes (https)</li></ul></li>
+        <li>Dynamic Controllers</li>
+        <li>Services 
+
+<ul><li>Supports cross-service events via singletons</li></ul></li>
+        <li>Widgets 
+
+<ul><li>Supports both composite and simple view type widgets</li><li>Supports three different scopes, Service, Workspace,
+Collection</li><li>Widget can register stylesheet dependency link</li><li>Widget can register javascript dependency link</li><li>Widget can include in-line script at bottom of page</li><li>Widget can have nested widgets</li><li>Widgets can be cached (with proper authorization support)</li><li>Planned support for script/style compression and consolidation
+planned</li><li>Planned support for drag drop widget management planned</li></ul></li>
+        <li>Themes 
+
+<ul><li>Revised to use YUI layout grids to support dynamic
+templates</li><li>Side bar can be moved to either side</li><li>Supports multiple fixed-widths and fluid layout</li></ul></li>
+        <li>Metadata 
+
+<ul><li>Data could be used to install, register, uninstall</li><li>Planned support for plug-in admin pages</li><li>Planned support to submit to a global plug-in registry</li></ul></li>
+        <li>Merits 
+
+<ul><li>Supports order in which plug-in is activated</li><li>Supports overwriting previous plug-in routes</li></ul></li>
+      </ul>
+      <p> </p>
+      <p>All of this is nearly ready for the next release.  If testing
+goes well, you can expect a release this weekend.</p>
+    </div>
+  </atom:content>
+  <atom:category term="BlogSvc" />
+  <atom:category term="MVC" label="MVC" />
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:updated>2009-03-15T04:45:03.8351892Z</atom:updated>
+  <atom:id>tag:jvance.com,2009-3-9:blog,AtomServer09NearlyReady</atom:id>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>5</svc:ratingSum>
+  <svc:raters>146.126.51.51</svc:raters>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.356Z</app:edited>
+</atom:entry>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0" xml:base="http://jvance.com/blog/2009/06/01/HtpcMiniCase.atom">
+  <atom:id>tag:jvance.com,2009-06-01:blog,HtpcMiniCase</atom:id>
+  <app:control>
+    <svc:approved>yes</svc:approved>
+    <svc:allowAnnotate>yes</svc:allowAnnotate>
+  </app:control>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>5</svc:ratingSum>
+  <svc:raters>68.113.123.204</svc:raters>
+  <atom:published>2009-06-01T13:53:00-05:00</atom:published>
+  <atom:title>Tiny HTPC Movie and Hulu Box Part 1 The Case</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <ol>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/01/HtpcMiniCase.xhtml">
+              <strong>
+Case</strong>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/10/HtpcMiniCase2.xhtml">Parts</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/14/HtpcMiniCase3.xhtml">Hardware
+Test</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/23/HtpcMiniCase4.xhtml">Assembly</a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a href="http://jvance.com/blog/2009/06/28/HtpcMiniCase5.xhtml">Conclusion</a>
+          </div>
+        </li>
+      </ol>
+      <h4>Introduction</h4>
+      <p>I'm planning to build a
+tiny computer for watching Hulu and HD encoded movies.  The
+computer needs to be:</p>
+      <ul>
+        <li>
+          <div>Shallow enough to easily
+fit on the fireplace mantel next to the TV</div>
+        </li>
+        <li>
+          <div>Powerful enough to play
+1080p video's and HD online videos</div>
+        </li>
+        <li>
+          <div>Pretty enough to make the
+wife happy</div>
+        </li>
+        <li>
+          <div>HDMI, Bluetooth and
+internal PSU to minimize cable and power bricks</div>
+        </li>
+      </ul>
+      <h4>The Case</h4>
+      <p>The case is from an old
+Dolby Digital decoder box from before that technology was built-in
+to receivers.  It is dusty and needs to be cleaned.</p>
+      <p>
+        <a href="http://jvance.com/media/2009/06/01/MiniHTPC0014.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Mini HTPC 001" alt="Mini HTPC 001" src="http://jvance.com/media/2009/06/01/MiniHTPC001_thumb2.media" />
+        </a>
+        <a href="http://jvance.com/media/2009/06/01/MiniHTPC0056.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Mini HTPC 005" alt="Mini HTPC 005" src="http://jvance.com/media/2009/06/01/MiniHTPC005_thumb4.media" />
+        </a>
+        <a href="http://jvance.com/media/2009/06/01/MiniHTPC0087.media">
+          <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Mini HTPC 008" alt="Mini HTPC 008" src="http://jvance.com/media/2009/06/01/MiniHTPC008_thumb5.media" />
+        </a>
+      </p>
+      <h5>Dimensions</h5>
+      <p>
+        <strong style="font-size: 120%">16.6"W x 2.25" H x 8.25" D</strong>
+      </p>
+      <p>The inside has plenty of
+room for a Mini ITX motherboard and there is probably enough room
+for a Slim Bluray drive and a Hard drive.  I'll likely custom
+fabricate the front out of plexi-glass and reuse some of the old
+buttons.</p>
+      <p>In the next post, I'll look
+at the hardware I will fit in this tiny case.  I'm currently
+looking at either the Intel platform with a <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16813500022">
+Zotac GF9300</a> motherboard or the AMD platform with the <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16813153124">
+Jetway 780G</a> motherboard.</p>
+      <p>
+        <strong>Update</strong>
+      </p>
+      <p>Here is a picture of it
+cleaned up:</p>
+      <p>
+        <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="denon_avd2000_1" alt="denon_avd2000_1" src="http://jvance.com/media/2009/06/10/Denon_avd2000_19.media" />
+      </p>
+      <p>It would be nice if I could reuse the old face including the LCD
+screen and the LEDs and knob but I lack the time to explore how to
+communicate with those electronics.</p>
+    </div>
+  </atom:content>
+  <atom:category term="Computers" />
+  <atom:category term="HTPC" />
+  <atom:updated>2009-07-06T15:54:32.6539991Z</atom:updated>
+  <app:edited>2009-07-06T15:54:32.6539991Z</app:edited>
+</atom:entry>

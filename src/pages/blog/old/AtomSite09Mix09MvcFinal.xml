@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:title>AtomSite 0.9 Released, Mix09, MVC Final</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>Today is a great day for me.  ASP.NET <a href="http://www.asp.net/mvc/">MVC</a> 1.0 Final was released today
+at <a href="http://live.visitmix.com">Mix09</a>. I finally released
+<a href="http://atomsite.net/">AtomSite</a> 0.9 on <a href="http://blogservice.codeplex.com">CodePlex</a> to coincide
+with the new framework.  I can finally get some sleep.  However,
+there is still tons of documentation that needs to be
+created/updated for this release.</p>
+      <p>I can't do this project alone.  If you'd like to help create
+plug-ins, documentation, or themes, let me know so I can add you to
+the development team.</p>
+      <p>Also, <a href="http://atomsite.net/">AtomSite</a> has a new
+website to go along with it's <a href="http://atomsite.net/blog/2009/03/15/BlogSvcdotNETIsNowAtomSite.xhtml">
+new name</a>.</p>
+      <p>Finally, the keynote for <a href="http://mix09.com">Mix09</a>
+was <a href="http://live.visitmix.com">streamed live today</a> and
+there are some great things coming out of Microsoft.  Silverlight
+3.0 looks very promising.  I encourage you to watch the video.</p>
+    </div>
+  </atom:content>
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="MVC" label="MVC" />
+  <atom:category term="AtomSite" label="AtomSite" />
+  <app:control />
+  <atom:published>2009-03-19T05:23:34.7363895Z</atom:published>
+  <atom:updated>2009-03-19T05:23:34.7363895Z</atom:updated>
+  <atom:id>tag:jvance.com,2009-03-19:blog,AtomSite09Mix09MvcFinal</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.338Z</app:edited>
+</atom:entry>

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/12/15/DirectShowFiltersForWindowsVistaX64And64bitCodecs.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>5</svc:ratingSum>
+  <svc:raters>71.91.79.184</svc:raters>
+  <atom:title>DirectShow Filters for Windows Vista x64 and 64bit Codecs</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <a href="http://blog.monogram.sk/janos/download/tools/graphstudio.png">
+          <img alt="" style="border-top-width: 0px; border-left-width: 0px; float: right; border-bottom-width: 0px; border-right-width: 0px" src="http://blog.monogram.sk/janos/download/tools/graphstudio-small.png" />
+        </a>
+A new version of <a href="http://blog.monogram.sk/janos/tools/monogram-graphstudio/">GraphStudio</a>
+(an open-source graphedit replacement) was released that <a href="http://forum.doom9.org/showthread.php?p=1223842#post1223842">supports
+x64</a>.  This is big news because previously, there was not a
+single filter management program on the internet that would work
+with 64 bit codecs.  Therefore, it was near impossible to
+understand why a media file would not playback in the 64 bit
+version of Vista Media Center.</p>
+      <h4>Background on 64bit and 32bit Codecs</h4>
+      <p>When codecs are compiled for either 64bit or 32bit they are only
+compatible with media players of the same type.  You cannot mix and
+match.  This is especially a problem on Vista x64 because Vista
+Media Center runs as a native 64bit application. However, Windows
+Media Player on 64bit systems defaults to 32bit even though there
+is a 64bit version installed side by side (the start menu just
+points to 32bit version). </p>
+      <h4>It's Best to Choose a Side</h4>
+      <p>Therefore, if you need Vista Media Center, stick to only 64bit
+codecs.   Do not install any 32bit codecs and instead of using the
+default 32bit WMP, use the 64bit version found at "C:\Program
+Files\Windows Media Player\wmplayer.exe" or better yet use <a href="http://mpc-hc.sourceforge.net/">Media Player Classic - Home
+Cinema</a> x64 edition.  If you want to use a 32bit or x86 media
+player and still utilize VMC, then you'll have to install two
+versions of each codec you want to use.</p>
+      <p>To make things worse, it is possible for 32 bit filters to
+conflict with 64 bit filters. </p>
+      <blockquote>
+        <p>My (wild) guess would be that the graphbuilder is instructed by
+templates from 32-bit filters (either Haali or Gabest source/demux
+filters) to use some 32-bit source/demux instead of "File Source
+(Async.)" that for obvious reasons won't work - <a href="http://forum.doom9.org/showthread.php?p=1224020#post1224020">RadScorpian</a></p>
+      </blockquote>
+      <p>His guess was confirmed.</p>
+      <blockquote>
+        <p>Microsoft was stupid enough to make this keys shared between
+32/64bit. This means that playback will break in many applications
+if you have got different source filters installed for 32/64 bit.
+Media Player Classic is the only DS player I know of that can cope
+with this issue. - <a href="http://forum.doom9.org/showthread.php?p=1224113#post1224113">clsid</a></p>
+      </blockquote>
+      <p>This also explains why even with all the internal filters turned
+off, that <a href="http://mpc-hc.sourceforge.net/">MPC-HC x64</a>
+was still able to play video's that other 64bit players could not. 
+Since I installed some 32bit filters first, it created a registry
+key pointing to the 32bit filter rather than the 64bit filter.  See
+<a href="#Troubleshooting">Troubleshooting</a> for more information
+on how I fixed it.</p>
+      <h4>My Setup</h4>
+      <p>I like to play MKV backups I keep on the hard drive so I use the
+following filter's:</p>
+      <ul>
+        <li>MPC Video Decoder x64 (<a href="http://downloads.sourceforge.net/mpc-hc/mpchc_x64_v1.2.908.0_MPCVideoDec.zip?modtime=1227985995&amp;big_mirror=0">
+MPCVideoDec.ax</a>) for DXVA hardware accelerated AVC and VC1
+decoding</li>
+        <li>Matroska Splitter x64 (<a href="http://downloads.sourceforge.net/mpc-hc/mpchc_x64_v1.2.908.0_MatroskaSplitter.zip?modtime=1227985995&amp;big_mirror=0">
+MatroskaSplitter.ax</a>) for playback of MKV and MKA files</li>
+        <li>ffdshow x64 (<a href="http://sourceforge.net/project/showfiles.php?group_id=173941&amp;package_id=199416&amp;release_id=569930">
+ffdshow.ax</a>) for playback of various video types and
+multichannel audio such as FLAC, DTS Master Audio, AC3 Dolby
+True-HD</li>
+      </ul>
+      <h4>Installation</h4>
+      <p>ffdshow comes with an installer.  When you install ffdshow make
+sure you <strong>uncheck</strong> the codecs that you want the MPC
+Video Decoder to decode with hardware acceleration (at least H.264
+/ AVC and VC-1).</p>
+      <p>
+        <img title="ffdshowCodecSetup" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" alt="ffdshowCodecSetup" src="http://jvance.com/media/2008/12/15/FfdshowCodecSetup11.media" />
+      </p>
+      <p>
+        <em>Note: If you've already installed you can uncheck the codecs
+in the property page.</em>
+      </p>
+      <div style="float: right; width: 12em">
+        <strong style="color: red">Important: you must run these commands as an
+admin</strong>
+      </div>
+      <p>To install MPCVideoDec.ax and MatroskaSplitter.ax files you'll
+need to do this manually.  Put these files somewhere permanent and
+then register them using the following command lines:</p>
+      <code>&gt; C:\Windows\SysWOW64\regsvr32.exe
+D:\Programs\Filters\MPCVideoDec.ax<br />
+ &gt; C:\Windows\SysWOW64\regsvr32.exe
+D:\Programs\Filters\MatroskaSplitter.ax</code>
+      <p>
+        <img title="image" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" alt="image" src="http://jvance.com/media/2008/12/15/Image4.media" />
+      </p>
+      <h4>Testing Playback</h4>
+      <p>To test you've installed the 64bit filters correctly, you can
+just try and play a file in the 64bit version of WMP.  However, WMP
+gives you little if any indication of what went wrong if the video
+does not play back correctly (same with VMC).</p>
+      <p>A better method to check your codecs are installed correctly is
+with the afore mentioned GraphStudio x64.</p>
+      <p>Open GraphStudio and go File -&gt; Render Media File… to open a
+graph of the media file.  If you get a "Cannot render file" message
+then something went wrong and you should check <a href="#Troubleshooting">Troubleshooting</a>.  If you see a graph
+built, then you should make sure it is using the proper filters. 
+For example, for my MKV file I want it to use the MPC - Video
+Decoder for the x264 video and the ffdshow Audio Decoder for the
+DTS Master audio.</p>
+      <p>
+        <a href="http://jvance.com/media/2008/12/15/GraphRender6.media">
+          <img title="GraphRender" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" alt="GraphRender" src="http://jvance.com/media/2008/12/15/GraphRender_thumb4.media" />
+        </a>
+      </p>
+      <p>If the wrong filter shows up then you may need to alter the
+merit of the filters or toggle the type of filters that each codec
+will decode.  To toggle merit, see <a href="#Troubleshooting">Troubleshooting</a>.</p>
+      <h4>Setup VMC and WMP to See MKV File Types</h4>
+      <p>You may have noticed that VMC and WMP does not recognize MKV
+files as video files.  You will need to register the MKV file type
+in the registry for these Matroska files to show up.  Be sure you
+backup your registry before proceeding.  Also, this step must  be
+done with Admin rights.</p>
+      <p>Download this file: <a href="/files/RegisterMatroska.reg">RegisterMatroska.reg</a></p>
+      <p>Or copy and paste the following into a text file called
+"RegisterMatroska.reg"</p>
+      <pre>
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.mkv]
+"PerceivedType"="video"
+"Content Type"="video/x-matroska"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Multimedia\WMPlayer\Extensions\.mkv]
+"Runtime"=dword:00000007
+"Permissions"=dword:0000000f
+"UserApprovedOwning"="yes"
+</pre>
+      <p>Double-click the registry file to alter your registry.</p>
+      <p>For a more comprehensive registry tweak for Matroska, please see
+<a href="http://a8t8.spaces.live.com/blog/cns!2518DD508BB713E8!220.entry">
+Add MKV/MKA Support to Windows Media Player 11 &amp; Windows Media
+Center</a></p>
+      <h4 id="Troubleshooting">Troubleshooting</h4>
+      <p>
+        <strong>"Cannot render file" -</strong> This may occur if you
+don't have the necessary codecs or there are conflicts with
+existing 32bit codecs.  If you previously installed 32 bit codec
+you may need to delete a registry key to get the 64bit codec to
+work.</p>
+      <p>For example, I could not play an MKV file until I opened the
+registry "regedit.exe" and deleted the following key:</p>
+      <code>"HKEY_CLASSES_ROOT\Media Type\Extensions\.mkv"</code>
+      <p>
+        <strong>Wrong Filter in Graph</strong> - This may occur if there
+are multiple filters that are capable of decoding the media
+format.  This is usually a problem if you prefer one filter over
+the other because one may support hardware acceleration and the
+other does not. </p>
+      <p>Some filter's have many codecs built in and you must enable the
+codec from the property page.  For example, the MPC - Video Decoder
+has a tab where you can toggle the codecs it handles.  In
+GraphStudio, you can access a filter's property page from the Graph
+menu -&gt; Insert Filter… -&gt; Choose Filter -&gt; Click Property
+Page button.</p>
+      <img title="image" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" alt="image" src="http://jvance.com/media/2008/12/16/Image101.media" />
+      <p>In some cases this isn't enough to get the filter to load.  You
+may also need to alter the merits of the codecs involved. Merit
+values define the order in which the Filter Graph Manager tries to
+add filters during graph building.  You can change merit values in
+GraphStudio.</p>
+      <p>
+        <strong>GraphStudio is currently the only application that can
+manage 64bit codecs.  All other codec managers only show 32bit
+codecs.</strong>
+      </p>
+      <p>From GraphStudio open the filters and choose the filter you'd
+like to alter the merit of.  For more information about setting a
+merit value, see <a href="http://msmvps.com/chrisl/articles/40395.aspx">Understanding
+DirectShow Merits</a>.</p>
+      <img style="border-width:0;height:346;width:576;border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="image" alt="image" src="http://jvance.com/media/2008/12/16/Image15.media" />
+      <h4>Other Resources</h4>
+      <ul>
+        <li>
+          <a href="http://a8t8.spaces.live.com/blog/cns!2518DD508BB713E8!141.entry">
+64-bit MP4/MKV Support For Vista Media Center</a>
+        </li>
+        <li>
+          <a href="http://www.avsforum.com/avs-vb/showthread.php?t=980298">.mkv
+splitter and vista x64 media center</a>
+        </li>
+        <li>
+          <a href="http://www.avsforum.com/avs-vb/showthread.php?p=15307852">How
+To Guide: Full DXVA (Hardware Accel) in Vista Media Center for
+1080p MKV's</a>
+        </li>
+        <li>
+          <a href="http://www.xvidvideo.ru/content/category/1/1/2/">http://www.xvidvideo.ru/content/category/1/1/2/</a>
+        </li>
+      </ul>
+    </div>
+  </atom:content>
+  <atom:id>tag:jvance.com,2008-12-15:blog,DirectShowFiltersForWindowsVistaX64And64bitCodecs</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:control>
+    <app:draft>no</app:draft>
+    <svc:approved>yes</svc:approved>
+    <svc:allowAnnotate>yes</svc:allowAnnotate>
+  </app:control>
+  <atom:published>2008-12-15T18:50:00-06:00</atom:published>
+  <atom:updated>2009-06-13T22:17:27.5161088Z</atom:updated>
+  <app:edited>2009-06-13T22:17:27.5161088Z</app:edited>
+</atom:entry>

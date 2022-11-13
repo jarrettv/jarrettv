@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:app="http://www.w3.org/2007/app">
+  <atom:title>New BlogSvc Release 0.2</atom:title>
+  <atom:content type="html">&lt;p&gt;This release includes an implementation of &lt;a href="http://tools.ietf.org/html/rfc5023"&gt;Atom Publishing Protocol&lt;/a&gt; on WCF 3.5.&amp;nbsp; In the words of &lt;a href="http://www.tbray.org/ongoing/When/200x/2008/07/07/Atom"&gt;Tim Bray&lt;/a&gt;:&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;An &lt;a title="RFC 5023 - The Atom Publishing Protocol" href="http://tools.ietf.org/html/rfc5023"&gt;Atompub&lt;/a&gt; implementation lets you create, retrieve, update, and delete (CRUD) Web Resources. ... Atompub starts with a &lt;a href="http://bitworking.org/projects/atom/rfc5023.html#appdocs"&gt;Service Document&lt;/a&gt;, which contains one or more named &lt;a href="http://bitworking.org/projects/atom/rfc5023.html#workspaces"&gt;Workspaces&lt;/a&gt;, which contain &lt;a href="http://bitworking.org/projects/atom/rfc5023.html#dataiscode"&gt;Collections&lt;/a&gt;, which are what you actually POST to in order to start up the CRUD process.&amp;nbsp; So the idea is simple; have a collection that when you POST to it, creates a new publication.&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;The object model is based off of the &lt;a title="RFC 4287 - The Atom Syndication Format" href="http://tools.ietf.org/html/rfc4287"&gt;Atom Syndication Format&lt;/a&gt; and the AtomPub specs.&amp;nbsp; All of the objects are based off of Xml or the new XElement.&amp;nbsp; Propeties are used to support strongly typed access to the data.&lt;/p&gt; &lt;style&gt;#objectModelTable
+{
+	width: 35em;
+	border: solid thin #F2F2F2;
+	border-collapse: collapse;
+	border-spacing: 0em;
+}
+#objectModelTable th
+{
+	color: White;
+}
+#objectModelTable th .atom
+{
+	background:#4486FF;
+	color:#E8F0FF;
+}
+#objectModelTable .atom
+{
+	background:#E8F0FF;
+	color:#4486FF;
+}
+#objectModelTable th .app
+{
+	background:#EE9842;
+	color:#FFF5EC;
+}
+#objectModelTable .app
+{
+	background:#FFF5EC;
+	color:#EE9842;
+}
+#objectModelTable th .thread
+{
+	background:#12AF26;
+	color:#EAFDEC;
+}
+#objectModelTable .thread
+{
+	background:#EAFDEC;
+	color:#12AF26;
+}&lt;/style&gt; &lt;table id="objectModelTable"&gt; &lt;tr&gt; &lt;th class="atom"&gt;Atom Syndication Format&lt;/th&gt; &lt;th class="app"&gt;Atom Publishing Protocol&lt;/td&gt;&lt;/th&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomCategory&lt;/td&gt; &lt;td class="app"&gt;AppCategories&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomContent&lt;/td&gt; &lt;td class="app"&gt;AppCollection&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomEntry*&lt;/td&gt; &lt;td class="app"&gt;AppControl&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomFeed&lt;/td&gt; &lt;td class="app"&gt;AppService&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomGenerator&lt;/td&gt; &lt;td class="app"&gt;AppWorkspace&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomLink*&lt;/td&gt; &lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomPerson&lt;/td&gt; &lt;th class="thread"&gt;Atom Threading Extension&lt;/th&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomSource&lt;/td&gt; &lt;td class="thread"&gt;ThreadInReplyTo&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt; &lt;td class="atom"&gt;AtomText&lt;/td&gt; &lt;td class="thread"&gt;* Extended&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt; &lt;p&gt;This release should work in IIS6 or IIS7 with .NET 3.5.&amp;nbsp; Also the SVC handler must support all verbs.&amp;nbsp; Since AtomPub is RESTful, you'll need PUT and DELETE to go along with the usual GET and POST verbs.&lt;/p&gt; &lt;p&gt;The WCF service is built using the new &lt;a href="http://msdn.microsoft.com/en-us/library/bb412169.aspx"&gt;Web Programming Model&lt;/a&gt; available in 3.5.&amp;nbsp; However, it is designed to support normal web services as well (more on this in a future post).&amp;nbsp; A neat WCF feature with this release is the support of media entries allowing a user to post images to a collection.&amp;nbsp; I found the trick to supporting raw data on &lt;a href="http://blogs.msdn.com/carlosfigueira/archive/2008/04/17/wcf-raw-programming-model-receiving-arbitrary-data.aspx"&gt;Carlos' blog&lt;/a&gt;.&amp;nbsp; However, there is a catch. Anytime you want to accept unknown content types and known content types, you must only deal with Stream objects.&amp;nbsp; For example, although CreateEntry will always return an AtomEntry document you must specify a Stream because the input could be an AtomEntry or say a JPG image.&lt;/p&gt;&lt;pre class="c#" name="code"&gt;[ServiceContract]
+public interface IAtomPub
+{
+    [WebGet(BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "{workspaceName}/{collectionName}/{entryName}/media")]
+    Stream RetrieveMedia(string workspaceName, string collectionName, string entryName);
+    
+    [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "{workspaceName}/{collectionName}")]
+    Stream CreateEntry(string workspaceName, string collectionName, Stream stream);
+
+    [WebGet(UriTemplate = "{workspaceName}/{collectionName}/{entryName}")]
+    Stream RetrieveEntry(string workspaceName, string collectionName, string entryName);
+
+    [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "{workspaceName}/{collectionName}/{entryName}", Method = "PUT")]
+    Stream UpdateEntry(string workspaceName, string collectionName, string entryName, Stream stream);
+
+    [WebInvoke(UriTemplate = "{workspaceName}/{collectionName}/{entryName}", Method = "DELETE")]
+    void DeleteEntry(string workspaceName, string collectionName, string entryName);
+
+    [OperationContract]
+    [WebGet(UriTemplate = "service")]
+    AppService RetrieveService();
+
+    [WebGet(UriTemplate = "{workspaceName}/{collectionName}/category?scheme={scheme}")]
+    AppCategories RetrieveCategories(string workspaceName, string collectionName, string scheme);
+
+    [WebGet(UriTemplate = "{workspaceName}/{collectionName}")]
+    AtomFeed RetrieveFeed(string workspaceName, string collectionName);
+}&lt;/pre&gt;
+&lt;p&gt;You can direct it to a strongly typed implementation by checking the content type.&lt;/p&gt;&lt;pre class="c#" name="code"&gt;public Stream CreateEntry(string workspaceName, string collectionName, Stream stream)
+{
+    string contentType = WebOperationContext.Current.IncomingRequest.ContentType;
+    AtomEntry entry;
+    if (contentType == Atom.ContentType || contentType == Atom.ContentTypeEntry)
+    {
+        entry = new AtomEntry();
+        XmlReader reader = new XmlTextReader(stream);
+        entry.Xml = XElement.Load(reader);
+        entry = CreateEntry(workspaceName, collectionName, entry);
+    }
+    else entry = CreateMedia(workspaceName, collectionName, stream);
+    return GetStream(entry);
+}&lt;/pre&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;IDs and Hrefs&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog.svc WCF Service 
+&lt;li&gt;UriTemplates 
+&lt;li&gt;Handling Entry or Media Resources 
+&lt;li&gt;WebLinks 
+&lt;li&gt;Object Model over .Net 3.5 SP1 Object Model &lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Test AtomPub and Atom and Threading auto links.&lt;/p&gt;</atom:content>
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="BlogSvc" />
+  <atom:category term="CSharp" label="C#" />
+  <atom:published>2008-08-04T20:30:33-05:00</atom:published>
+  <app:control>
+    <app:draft>no</app:draft>
+  </app:control>
+  <atom:updated>2008-09-11T20:25:54.345-05:00</atom:updated>
+  <atom:id>tag:jvance.com,2008-08-05:blog,New-BlogSvc-Release-02</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.824Z</app:edited>
+</atom:entry>

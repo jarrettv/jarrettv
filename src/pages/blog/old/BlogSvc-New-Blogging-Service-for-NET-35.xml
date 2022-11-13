@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:thread="http://purl.org/syndication/thread/1.0" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xml:base="http://jvance.com/blog/2008/07/22/BlogSvc-New-Blogging-Service-for-NET-35.atom" xmlns:app="http://www.w3.org/2007/app">
+  <atom:published>2008-07-21T23:15:52-05:00</atom:published>
+  <app:control></app:control>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>4</svc:ratingSum>
+  <svc:raters>71.91.79.184</svc:raters>
+  <atom:title>BlogSvc - New Blogging Service for .NET 3.5</atom:title>
+  <atom:content type="html">&lt;p&gt;&lt;strong&gt;Update: BlogService now has it’s own website, see &lt;/strong&gt;&lt;a href="http://blogsvc.net"&gt;&lt;strong&gt;http://blogsvc.net&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;I've started a new project on &lt;a href="http://codeplex.com"&gt;CodePlex&lt;/a&gt; called &lt;a href="http://codeplex.com/blogsvc"&gt;BlogService&lt;/a&gt;.&amp;#160; Eventually, it will have it's own website at &lt;a href="http://blogsvc.net/"&gt;blogsvc.net&lt;/a&gt;.&amp;#160; The point of this project is to provide a robust back-end for a blog site.&amp;#160; It uses the &lt;a href="http://msdn.microsoft.com/en-us/library/ms972319.aspx"&gt;provider model design pattern&lt;/a&gt; for abstracting the data layer similar to &lt;a href="http://msdn.microsoft.com/en-us/library/aa479030.aspx"&gt;ASP.NET providers&lt;/a&gt;.&amp;#160; I've uploaded a &lt;a href="http://www.codeplex.com/blogsvc/Wiki/View.aspx?title=Design&amp;amp;referringTitle=Home"&gt;design diagram&lt;/a&gt; of the major classes. It also contains a &lt;a href="http://msdn.microsoft.com/en-us/netframework/aa663324.aspx?PHPSESSID=0fbb7c61"&gt;WCF&lt;/a&gt; service that will expose multiple endpoints (soap, rest, json).&lt;/p&gt;  &lt;p&gt;To kick things off, I created a community preview release that includes the following functionality: &lt;/p&gt;  &lt;ol&gt;   &lt;li&gt;BlogProvider &lt;/li&gt;    &lt;li&gt;XmlBlogProvider &lt;/li&gt;    &lt;li&gt;Business (Blog, BlogSite, BlogComment, etc.) &lt;/li&gt;    &lt;li&gt;Configuration &lt;/li&gt;    &lt;li&gt;Unit Tests &lt;/li&gt;    &lt;li&gt;WCF Service &lt;/li&gt;    &lt;li&gt;Multi-site support &lt;/li&gt; &lt;/ol&gt;  &lt;p&gt;This release provides most of the functionality needed to support a front-end blogging site. &lt;i&gt;It does not include web pages yet.&lt;/i&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://www.codeplex.com/blogsvc/Release/ProjectReleases.aspx?ReleaseId=15281"&gt;BlogSvc Release 0.1&lt;/a&gt;&lt;/p&gt;  </atom:content>
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="CSharp" label="C#" />
+  <atom:category term="BlogSvc" />
+  <atom:updated>2008-10-08T19:03:44.3271175Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-07-22:blog,BlogSvc-New-Blogging-Service-for-NET-35</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.842Z</app:edited>
+</atom:entry>

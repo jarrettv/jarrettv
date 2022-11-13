@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xml:base="http://jvance.com/blog/2008/10/03/MVCIsCool.atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:title>MVC is Cool</atom:title>
+  <atom:content type="html">&lt;p&gt;&lt;img title="image" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; margin-left: 0px; margin-right: 0px; border-right-width: 0px" height="240" alt="image" src="http://jvance.com/media/2008/10/03/Image10.media" width="198" align="right" border="0" /&gt; I've recently spent many late nights learning (by implementation) &lt;a href="http://asp.net/mvc"&gt;ASP.NET MVC&lt;/a&gt; and I'm very pleased with the new framework.&amp;#160; The old web forms model of programming was great for quick and dirty web apps but it really took too much control away from those developers who have a deep understanding of web technology. With &lt;a href="http://www.asp.net/mvc/"&gt;MVC&lt;/a&gt;, it really lets web developers go back to their roots.&amp;#160; For example, you are no longer dealing with “asp” controls but directly with the classic html input controls.&lt;/p&gt;  &lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;As part of my learning process, I converted &lt;a href="http://blogsvc.net"&gt;BlogService&lt;/a&gt; over to Preview 5 release.&amp;#160; The conversion went smoothly.&amp;#160; For me, there was only a small learning curve as I’ve been tracking in MVC for a long time.&amp;#160; It is a quite popular topic right now especially with the announcement of &lt;a href="http://jquery.com"&gt;jQuery&lt;/a&gt; being included out of the box with .NET.&amp;#160; How great!&lt;/p&gt;  &lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Check out the latest release of BlogSvc to see the code: &lt;a href="http://blogsvc.net/blog/2008/10/02/Release06.xhtml"&gt;BlogService MVC Release 0.6&lt;/a&gt;&lt;/p&gt;  </atom:content>
+  <atom:published>2008-10-06T21:44:00-05:00</atom:published>
+  <atom:category term="ASPNET" label="ASP.NET" />
+  <atom:category term="BlogSvc" />
+  <atom:category term="MVC" label="MVC" />
+  <atom:updated>2008-10-09T04:11:58.1378509Z</atom:updated>
+  <atom:id>tag:jvance.com,2008-10-03:blog,MVCIsCool</atom:id>
+  <atom:author svc:id="Jarrett">
+    <atom:name>Jarrett</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <app:edited>2009-03-20T22:08:59.572Z</app:edited>
+</atom:entry>

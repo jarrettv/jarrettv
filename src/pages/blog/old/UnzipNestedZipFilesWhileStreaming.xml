@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:svc="http://atomsite.net/info/Service" xmlns:app="http://www.w3.org/2007/app" xmlns:thread="http://purl.org/syndication/thread/1.0">
+  <atom:id>tag:jvance.com,2009-06-13:blog,UnzipNestedZipFilesWhileStreaming</atom:id>
+  <atom:title>Unzip Nested Zip Files While Streaming</atom:title>
+  <atom:content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>I recently encountered a scenario where I needed to unzip all
+the files in a zip file and also any files from internal zip
+files.  The source data is streaming in through an HTTP POST via
+IIS into BizTalk. The zip files can be large (up to 200 MB) and
+there can be multiple posts happening at the same time.  This is
+too much data to fit in memory.  Also, I needed to avoid
+unnecessary network traffic so using temporary files is not an
+optimal solution.  Therefore, I needed a forward-only streaming
+solution.</p>
+      <p>To accomplish this, I turned to <a href="http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx">
+#ziplib</a>. The ZipInputStream object looked like the perfect
+solution to this situation. Here is an example of how to use this
+class:</p>
+      <pre>
+using ( ZipInputStream s = new ZipInputStream(stream)) {
+  ZipEntry theEntry;
+  while ((theEntry = s.GetNextEntry()) != null) {
+    int size = 2048;
+    byte[] data = new byte[2048];
+    size = s.Read(data, 0, data.Length);
+    if (size &gt; 0) {
+      Console.Write(new ASCIIEncoding().GetString(data, 0, size));
+    } else {
+      break;
+    }
+  }
+}
+</pre>
+      <p>As the raw data is streamed through the ZipInputStream, it gets
+unzipped.  The GetNextEntry() method sets the position to the
+beginning of the next file.  Then we just read from the
+ZipInputStream to get the unzipped file data.  So to unzip nested
+zip files, I came up with a function I could call recursively:</p>
+      <pre>
+public static void NestedUnzip(Stream stream, string targetPath)
+{
+  ZipInputStream s = new ZipInputStream(stream);
+  ZipEntry entry;
+  while ((entry = s.GetNextEntry()) != null) {
+    //when internal zip file, unzip it
+    if (Path.GetExtension(entry.Name).ToLower() == ".zip") {
+      NestedUnzip(s,
+        Path.Combine(targetPath, Path.GetFileNameWithoutExtension(entry.Name)));
+    } else {
+      //make sure target path exists
+      string path = Path.Combine(targetPath, entry.Name);
+      Directory.CreateDirectory(Path.GetDirectoryName(path));
+
+      //write the data to disk
+      using (FileStream fs = File.Create(path)) {
+        byte[] buffer = new byte[1024];
+        int read = buffer.Length;
+        while (true) {
+          read = s.Read(buffer, 0, buffer.Length);
+          if (read &gt; 0) fs.Write(buffer, 0, read);
+          else break;
+        }
+      }
+    }
+  }
+}
+</pre>
+      <p>Now this would work great for my needs as it process the data as
+a forward-only read-only stream.  However, whenever a nested zip
+runs out of entries (i.e. GetNextEntry() == null) the
+ZipInputStream calls close on the underlying stream.  This results
+in the unzip process ending prematurely.</p>
+      <p>To fix this, I commented out the Close() call within the
+GetNextEntry() method of the ZipInputStream class:</p>
+      <pre>
+if (header == ZipConstants.CentralHeaderSignature ||
+  header == ZipConstants.EndOfCentralDirectorySignature ||
+  header == ZipConstants.CentralHeaderDigitalSignature ||
+  header == ZipConstants.ArchiveExtraDataSignature ||
+  header == ZipConstants.Zip64CentralFileHeaderSignature) {
+  // No more individual entries exist
+  // -jv- 11-Jun-2009 Removed close so it can support nested zips
+  //Close();
+  return null;
+}
+</pre>
+      <p>Of course, the calling method should properly close the source
+stream so this is a safe change to make. For example:</p>
+      <pre>
+using (Stream s = inmsg.BodyPart.GetOriginalDataStream()) {
+  NestedUnzip(s, unzipLocation)
+}
+</pre>
+      <p>The result is a perfect streaming solution with low memory usage
+and no need for temporary files.</p>
+    </div>
+  </atom:content>
+  <atom:category term="CSharp" label="C#" />
+  <app:control />
+  <atom:published>2009-06-13T16:33:59.5907529Z</atom:published>
+  <atom:updated>2009-06-13T16:33:59.5907529Z</atom:updated>
+  <atom:author svc:id="Jarrett">
+    <atom:name>JarrettV</atom:name>
+    <atom:email>jarrettv@gmail.com</atom:email>
+    <atom:uri>http://jvance.com/</atom:uri>
+  </atom:author>
+  <svc:ratingCount>1</svc:ratingCount>
+  <svc:ratingSum>5</svc:ratingSum>
+  <app:edited>2009-07-07T18:33:37.9667637Z</app:edited>
+  <svc:raters>199.227.248.2</svc:raters>
+</atom:entry>
