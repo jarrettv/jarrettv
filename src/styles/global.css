@@ -92,3 +92,18 @@ header>div>div>a {
 header>div>div>a>svg {
 	vertical-align: middle;
 }
+
+
+main {
+	background-color: #fffa;
+}
+h2 {
+	font-weight: normal;
+	font-size:1.1rem;
+}
+
+table{border-collapse: collapse;}
+thead {background-color:#222a;color:#fff;}
+thead>tr>th{padding:0.1rem 0.5rem}
+tbody>tr>td{padding:0.5rem}
+tbody>tr:nth-child(odd){background-color: #fffb;}

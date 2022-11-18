@@ -1,0 +1,65 @@
+Does the client want to continue to host IMS with Azure AD?
+
+Does the client own any existing PDF solutions?
+
+Order events must be replayed to derive current policy and client information?
+
+How often does OMS need to be ad-hoc queried?
+
+For streaming from OMS, is the 15 minute limitation due to timeouts?
+
+Assume full-stack engineers (MVC vs SPA)?
+
+Have enough versus needing more info
+Invited to slack
+Fede insights, current API looks like, etc
+Careful with time investment
+Clear with though process, delivered in constrained timeframe
+
+Customer level communication
+Building on top of info already delivered
+Work async, set expectations
+Be squeaky but not too much
+I expect o have a list of questions by Xpm
+Preparing not to be block on own timeline
+Diagrams
+Document instead of slide-deck, long format
+First principals
+Come from a point of confidence
+
+Architecture diagrams
+Data flow diagrams
+Tools, services, databases, and langs, with justification
+Est Cost for devops and infrastructure
+Security considerations
+Definition of our deployment strategy
+
+Established technologies and architecture?
+IMS with Azure AD
+Existing infrastructure?
+Existing libraries/purchases PDF?
+Devops team?
+Agile?
+
+15k employees
+100k + clients
+On-prem to cloud
+Some Azure, moving to AWS
+Azure AD + Oauth 2.0
+OMS -> central policy
+	• Change log
+	• Not normalized
+	• JSON payload depends on event type
+		○ Custom parser
+	• OMS 5mins to gather all events to equal snapshot
+
+Average events
+
+OMS
+	• One time migration? Complete rewrite or will they need to function same time?
+	• Streaming API (15 mins max?) why, what does that mean?
+
+Web app
+	• Goto for day to day tasks
+	• Order Exporter
+My Profile (employees)
