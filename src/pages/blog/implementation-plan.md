@@ -41,6 +41,19 @@ This plan targets AWS for new infrastructure to support our solution.
 
 </div>
 
+## Security
+
+This plan recommends a combination of role-based access security (RBAC) and attribute-based access security (ABAC). User's will login through Open ID. The IMS will include user claims upon successful authentication. The claims will be utilized for authorization.
+
+This plan recommends the following permissions:
+
+| Permission             | RBAC   | ABAC    | Description
+| -----------------------| -------|---------|------------------------------------------
+| `emp-profile-view`     | ✅     |        | View and lookup employee profiles
+| `emp-profile-my-edit`  | ✅     | ✅     | Edit my own profile
+| `emp-profile-any-edit` | ✅     |        | Edit any employee's profile (HR only)
+| `order-export`         | ✅     |        | View and export an order
+
 ## Modules
 
 This plan recommends building multiple business and infrastructure modules to support our use cases. The goal
@@ -73,14 +86,8 @@ For simplicity, this service will retrieve in real-time the "read-only" data fro
 
 <div style="border: 1px solid #f2db00; border-radius:6px; background:#fffde5;padding:1rem;display:flex;align-content:top">
 <div>
-<svg xmlns="http://www.w3.org/2000/svg" style="width:1.6rem;color:#0092ff;margin:0.3rem 0.8rem" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6.39v4.7c0 4 2.55 7.7 6 8.83c3.45-1.13 6-4.82 6-8.83v-4.7l-6-2.25l-6 2.25z" opacity=".3"/><path fill="currentColor" d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91c4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83c-3.45-1.13-6-4.82-6-8.83v-4.7l6-2.25l6 2.25v4.7z"/></svg></div>
-<div>
-  This plan recommends a combination of role-based access security (RBAC) and attribute-based access security (ABAC).
-  <ul>
-    <li>RBAC for permitting HR to edit any profile</li>
-    <li>ABAC for permitting employees to edit own profile</li>
-  </ul>
-</div>
+<svg xmlns="http://www.w3.org/2000/svg" style="width:1.4rem;color:#0092ff;margin:0 0.8rem" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6.39v4.7c0 4 2.55 7.7 6 8.83c3.45-1.13 6-4.82 6-8.83v-4.7l-6-2.25l-6 2.25z" opacity=".3"/><path fill="currentColor" d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91c4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83c-3.45-1.13-6-4.82-6-8.83v-4.7l6-2.25l6 2.25v4.7z"/></svg></div>
+This service will protect private employee profile information by checking claims on the JWT token.
 </div>
 
 This service will contain the following endpoints as defined by Open API version 3 specification:
