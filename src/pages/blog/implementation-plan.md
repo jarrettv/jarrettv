@@ -28,7 +28,7 @@ The following diagram shows a high level design of the solution. This plan will 
 
 This plan targets AWS for new infrastructure to support our solution. 
 
-<div style="border:1px solid #222a;border-radius: 6px;">
+<div style="border:1px solid #555;border-radius: 6px;">
 
 | Infrastructure    | Description                                                 | Alternates
 | ------------------| ------------------------------------------------------------| ------------
@@ -47,12 +47,16 @@ This plan recommends a combination of role-based access security (RBAC) and attr
 
 This plan recommends the following permissions:
 
+<div style="border:1px solid #555;border-radius: 6px;">
+
 | Permission             | RBAC   | ABAC    | Description
 | -----------------------| -------|---------|------------------------------------------
 | `emp-profile-view`     | ✅     |        | View and lookup employee profiles
 | `emp-profile-my-edit`  | ✅     | ✅     | Edit my own profile
 | `emp-profile-any-edit` | ✅     |        | Edit any employee's profile (HR only)
 | `order-export`         | ✅     |        | View and export an order
+
+</div>
 
 ## Modules
 
@@ -92,11 +96,15 @@ This service will protect private employee profile information by checking claim
 
 This service will contain the following endpoints as defined by Open API version 3 specification:
 
+<div style="border:1px solid #555;border-radius: 4px;">
+
 | Method | Endpoint         | Request                             | Response
 | -------| -----------------| ------------------------------------| ------------
 | `GET`  | /employees       | Search criteria* paging querystring | JSON paged list of profiles
 | `GET`  | /employees/{id}  | Load full employee profile          | JSON employee profile
 | `POST` | /employees/{id}  | JSON employee profile               | JSON employee profile
+
+</div>
 
 This plan also recommends the following design choices:
 
@@ -120,11 +128,15 @@ The following sequence diagram shows the flow of communication for order exports
 
 This following endpoints will be provided as defined by Open API version 3 specification:
 
+<div style="border:1px solid #555;border-radius:4px;">
+
 | Method | Endpoint             | Request                              | Response
 | -------| ---------------------| -------------------------------------| ------------
 | `GET`  | /orders              | Search criteria* paging querystring  | JSON paged list of orders
 | `GET`  | /orders/export/{id}  | Order id in route                    | JSON order
 | `POST` | /orders/export       | JSON with order id and template id   | JSON PDF download link
+
+</div>
 
 This plan also recommends the following design choices:
 
@@ -140,9 +152,13 @@ Generating PDFs from HTML is a computationally expensive process. This design re
 * Generated PDFs can be large binary files
 * S3 supports object expiration
 
+<div style="border:1px solid #555;border-radius:4px;">
+
 | Method | Endpoint             | Request                              | Response
 | -------| ---------------------| -------------------------------------| ------------
 | `POST` | /generate            | JSON with HTML or URL to render      | JSON with unique hash ID download URL
+
+</div>
 
 ### Sync Job
 

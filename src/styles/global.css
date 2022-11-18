@@ -106,4 +106,5 @@ table{border-collapse: collapse;}
 thead {background-color:#222a;color:#fff;}
 thead>tr>th{padding:0.1rem 0.5rem}
 tbody>tr>td{padding:0.5rem}
-tbody>tr:nth-child(odd){background-color: #fffb;}
+tbody>tr:nth-child(odd){background-color: #fffa;}
+tbody>tr:nth-child(even){background-color: #fff4;}
