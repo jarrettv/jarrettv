@@ -1,0 +1,57 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		pubDate?: string;
+		updatedDate?: string;
+		heroImage?: string;
+	};
+}
+
+const {
+	content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+	<body>
+		<Header title={title} />
+		<main>
+			<article>
+				<h1 class="title">{title}</h1>
+				<div style="display:flex; align-content: center;">
+					<span style="font-size:1.1rem;background:#d78428;color:#fff;padding:0 0.4rem;border-radius:4px;font-weight: normal;margin-right:1rem">DRAFT</span>
+				{pubDate && <time class="date" datetime={pubDate} style="margin-right:2rem">{pubDate}</time>}
+				{
+					updatedDate && (
+						<div style="color:#666;font-size:0.8rem;margin-top:0.1rem">
+							Updated <time class="timeago" datetime={updatedDate}>{updatedDate}</time>
+						</div>
+					)
+				}</div>
+				<slot />
+			</article>
+		</main>
+		<Footer />
+	</body>
+    <script>
+        const nodes = document.querySelectorAll('.timeago');
+        timeago.render(nodes)
+        const dateTimes = document.querySelectorAll('.date');
+        console.log(dateTimes)
+        dateTimes.forEach(element => {
+            element.innerText = new Date(element.getAttribute("datetime")).toDateString()
+        });
+    </script>
+</html>

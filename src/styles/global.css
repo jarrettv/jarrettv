@@ -78,7 +78,7 @@ blockquote {
 }
 
 header {
-	margin: 0 0 1em;
+	margin: 0;
 	background-color: #fffa;
 }
 h1 {
@@ -91,6 +91,10 @@ header>div>div>a {
 }
 header>div>div>a>svg {
 	vertical-align: middle;
+}
+
+nav {
+	backdrop-filter: contrast(95%) hue-rotate(90deg);
 }
 
 
