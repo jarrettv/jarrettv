@@ -39,3 +39,30 @@ My goal was an ERV with boost capability with targeted stale air exhaust and fre
 | Crawlspace           | Stale Exhaust      | Automatic boost when poor AQ
 
 </div>
+
+## Features
+
+* Central control module
+* Stale-air monitoring
+* Local-only control
+* Home-assistant ready (but not required)
+* Multi-boost capable
+* Manual & auto boosting
+
+## Smart Vent
+
+The smart vents are for stale air returns so you can target bad air and get it out of the house. Although targeting fresh-air vents could be useful in certain scenarios, it isn't as important.
+
+<img style="max-width:340px;float:right" src="/img/smart-vents/vent-elbow-example.webp" />
+
+During construction, I ran a 4" duct to all locations listed above. I utilized a combination of:
+
+* 4" Flexible duct commonly used for dryer venting (less efficient)
+* 4" Straight ducts for longer runs (more efficient)
+* 4" Low profile platic elbow (Fits in 2x4 Wall)
+* Cat5e cable to end of each opening
+* Custom 3D printed cable holder
+
+At the end of each duct is a wall boot
+
+### ESPHome DIY Module

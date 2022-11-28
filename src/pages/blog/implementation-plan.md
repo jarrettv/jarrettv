@@ -71,6 +71,7 @@ of this architecture is to provide the ground-work for supporting additional fea
 </div>
 
 ### Web App
+<img src="/web_app.svg" style="max-width:480px;float:right;margin:1rem"/>
 
 The web app is a front-end ASP.NET MVC infrastructure service utilizing server side rendering (SSR). This plan recommends adopting a common CSS framework to keep styling consistent with existing systems and client designs. It may be useful to consider a modern SPA framework if we anticipate complex UX use cases.
 
@@ -80,6 +81,7 @@ The web app is a front-end ASP.NET MVC infrastructure service utilizing server s
 * Utilize Vertical Slice project layout
 
 ### Profile Service
+<img src="/profile_service.svg" style="max-width:420px;float:right;margin:1rem"/>
 
 The profile service is a business module utilizing .NET microservice pattern and minimal APIs. This plan recommends the service store custom  profile information in AuroraDB for the following reasons:
 
@@ -112,6 +114,7 @@ This plan also recommends the following design choices:
 * OpenTelemetry instrumentation with a CloudWatch adapter
 
 ### Order Service
+<img src="/order_service.svg" style="max-width:420px;float:right;margin:1rem"/>
 
 The order service is a business module utilizing .NET microservice pattern and minimal APIs. This plan recommends the service store all order events in a record-per-order document in DynamoDB for the follwing reasons:
 
@@ -144,6 +147,7 @@ This plan also recommends the following design choices:
 * OpenTelemetry instrumentation with a CloudWatch adapter
 
 ### PDF Service
+<img src="/pdf_service.svg" style="max-width:260px;float:right;margin:1rem"/>
 
 The PDF service is an infrastructure service that utilizes a headless chromium solution for rendering PDFs from HTML. This service will accept a URL or raw HTML for rendering. Any assets required for rendering must be publically available. This plan recommends embedding assets into HTML whenever possible.
 
